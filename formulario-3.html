@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
@@ -35,7 +36,7 @@
             <div class="card-body p-2 m-2">
                 <canvas class="linha"></canvas>
                 <div class="form-etapas">
-                    <ul>
+                    <ul class="ul-etapas">
                         <li>
                             <button class="btn btn-secondary">
                                 Termos
@@ -53,14 +54,62 @@
                         </li>
                         <li>
                             <button class="btn btn-secondary">
-                                Confirmação   
+                                Confirmação
                             </button>
                         </li>
                     </ul>
                 </div>
                 <div class="form-conteudo">
                     <form action="" method="post" enctype="multipart/form-data">
-                        
+                        <h1 class="text-center">LOCAL DO SINISTRO</h1>
+
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label for="cep" class="control-label">CEP</label>
+                                        <input class="form-control" name="cep" type="text" id="cep" required=""
+                                            value="">
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label for="logradouro" class="control-label">Logradouro</label>
+
+                                        <input class="form-control" name="logradouro" type="text" required=""
+                                            id="logradouro" value="">
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label for="bairro" class="control-label">Bairro</label>
+                                        <input class="form-control" id="bairro" name="bairro" required="">
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label for="complemento" class="control-label">Complemento</label>
+                                        <input class="form-control" name="complemento" type="text" id="complemento"
+                                            value="">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <button class="btn btn-success mt-2 ">
+                            <i class="bi bi-arrow-right"></i>
+                            <span>Anterior</span>
+                        </button>
+                        <button class="btn btn-primary mt-2 ">
+                            <i class="bi bi-arrow-right"></i>
+                            <span>Próximo</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -70,10 +119,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="js/cep.js"></script>
     <footer>
         <ul class="ulfooter">
-            <li class=""><img src="imagens/footer.png" alt=""  width="10%"></li>
-            <li class=""><img src="imagens/logofooter.png" alt=""  width="70%"></li>
+            <li class=""><img src="imagens/footer.png" alt="" width="10%"></li>
+            <li class=""><img src="imagens/logofooter.png" alt="" width="70%"></li>
         </ul>
     </footer>
 </body>
