@@ -349,7 +349,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h4>DADOS PESSOAIS</h4>
+                    <h4 class="mt-2">DADOS PESSOAIS</h4>
+                    <canvas class="linha"></canvas>
                     <div class="alert alert-primary" role="alert">
                         <b>CONDUTOR:</b> A pessoa que estava dirigindo o
                         veículo no momento do acidente.<br>
@@ -403,7 +404,8 @@
                             <input class="form-control mt-2" type="text">
                         </div>
                     </div>
-                    <h4>DESCREVA O SINISTRO</h4>
+                    <h4 class="mt-2">DESCREVA O SINISTRO</h4>
+                    <canvas class="linha"></canvas>
                     <div class="row">
                         <div class="col-md-12">
                             <textarea cols="10" rows="10" class="form-control"></textarea>
@@ -411,7 +413,8 @@
                         </div>
                     </div>
 
-                    <h4>CARTEIRA DE HABILITAÇÃO</h4>
+                    <h4 class="mt-2">CARTEIRA DE HABILITAÇÃO</h4>
+                    <canvas class="linha"></canvas>
                     <div class="row">
                         <div class="col-md-6">
                             <label>Número</label>
@@ -436,15 +439,38 @@
                             <input class="form-control mt-2" type="date">
                             <label>Estado</label>
                             <select class="form-control mt-2" type="text" id="estado">
-                                
-                                
+
+
                             </select>
                         </div>
 
                     </div>
-                    <h4>VEÍCULO</h4>
+                    <h4 class="mt-2">VEÍCULO</h4>
+                    <canvas class="linha"></canvas>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalAne">
+                            Adicionar
+                        </button>
+                    </div>
+
+                    <div class="col-md-12">
+                        <table class="table mt-2">
+                            <thead>
+                                <tr>
+                                    <th>Placa</th>
+                                    <th>Tipo</th>
+                                    <th>Caracterítica</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -452,11 +478,12 @@
             </div>
         </div>
     </div>
-    </div>
+
     <!--fim do moldal envo.-->
 
     <!-- veículos-->
-    <div class="modal fade" id="exampleModalVe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade modal-lg" id="exampleModalVe" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -464,7 +491,46 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    veiculos
+                    <h4 class="mt-2">INFORMAÇÕES DO VEÍCULO</h4>
+                    <canvas class="linha"></canvas>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="mt-2">Tipo do Veículo*</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-2">Placa</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-2">Renavam</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-2">Cor</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-2">Marca</label>
+                            <input class="form-control mt-2" type="text">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="mt-2">Modelo</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-2">Chassi</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-2">Estado</label>
+                            <select id="estadoVeiculo" class="form-select"></select>
+                           
+                            <label class="mt-2">Município</label>
+                            <select id="municipioVeiculo" class="form-select"></select>
+                        </div>
+                        <div class="row">
+                            <h4 class="mt-2">DECLARAÇÃO DAS AVARIAS</h4>
+                            <canvas class="linha"></canvas>
+                            <div class="col-md-11">
+                                <textarea cols="10" rows="10" class="form-control"></textarea>
+                                <b class="text-danger">32700 characters restantes.</b>
+                            </div>
+                            <div class="col-md-12 mt-1 p-1 px-1">
+                                <input type="checkbox" id="correu"><span><label form="correu"> &nbsp;Veículo evadiu-se do local.</label></span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
