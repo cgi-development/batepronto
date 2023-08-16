@@ -10,12 +10,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <script src="js/formulario-3.js"></script>
+    
     <style>
         hr {
             color: #286fb6 !important;
+        }
+
+        .file-input-wrapper {
+            height: 90px;
+            margin: 2px;
+            overflow: hidden;
+            position: relative;
+            width: 100px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .file-input-wrapper>input[type="file"] {
+            font-size: 25px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-input-wrapper>.btn-file-input {
+            background-color: #494949;
+            border-radius: 4px;
+            color: #fff;
+            display: inline-block;
+            height: 34px;
+            margin: 0 0 0 -1px;
+            padding-left: 0;
+            width: 121px;
+            cursor: pointer;
+        }
+
+        .file-input-wrapper:hover>.btn-file-input {
+            background-color: #494949;
+        }
+
+        #img_text {
+            float: right;
+            margin-right: -80px;
+            margin-top: -14px;
         }
     </style>
 </head>
@@ -399,7 +442,7 @@
                             <label class="mt-1">Bairro</label>
                             <input class="form-control mt-2" type="text">
                             <label class="mt-1">Estado</label>
-                            <select class="form-select estado" ></select>
+                            <select class="form-select estado"></select>
                             <label class="mt-1">Cidade</label>
                             <select class="form-select municipio"></select>
                         </div>
@@ -408,8 +451,8 @@
                     <canvas class="linha"></canvas>
                     <div class="row">
                         <div class="col-md-12">
-                            <textarea cols="10" rows="10" class="form-control"></textarea>
-                            <b class="text-danger">32700 characters restantes.</b>
+                            <textarea cols="10" rows="10" class="form-control" id="descreveSinistro"></textarea>
+                            <b class="text-danger"><span id="caracteresSinistro">32700</span> characters restantes.</b>
                         </div>
                     </div>
 
@@ -438,7 +481,7 @@
                             <label>Validade</label>
                             <input class="form-control mt-2" type="date">
                             <label>Estado</label>
-                            <select class="form-control mt-2 estado" type="text" >
+                            <select class="form-control mt-2 estado" type="text">
 
 
                             </select>
@@ -512,22 +555,23 @@
                             <label class="mt-2">Chassi</label>
                             <input class="form-control mt-2" type="text">
                             <label class="mt-2">Estado</label>
-                            <select  class="form-select estado" id="estado"></select>
-                           
+                            <select class="form-select estado" id="estado"></select>
+
                             <label class="mt-2">Município</label>
-                            <select  class="form-select municipio" id="municipio"></select>
+                            <select class="form-select municipio" id="municipio"></select>
                         </div>
                         <div class="row">
                             <h4 class="mt-2">DECLARAÇÃO DAS AVARIAS</h4>
                             <canvas class="linha"></canvas>
                             <div class="col-md-11">
-                                <textarea cols="10" rows="10" class="form-control"></textarea>
-                                <b class="text-danger">32700 characters restantes.</b>
+                                <textarea cols="10" rows="10" class="form-control" id="declaracaoAvaria"></textarea>
+                                <b class="text-danger"><span id="caracteresAvaria">32700</span>  characters restantes.</b>
                             </div>
                             <div class="col-md-12 mt-1 p-1 px-1">
-                                <input type="checkbox" id="correu"><span><label form="correu"> &nbsp;Veículo evadiu-se do local.</label></span>
+                                <input type="checkbox" id="correu"><span><label form="correu"> &nbsp;Veículo evadiu-se
+                                        do local.</label></span>
                             </div>
-                           
+
                         </div>
                     </div>
 
@@ -540,16 +584,36 @@
         </div>
     </div>
     <!-- fim veículos-->
+    <script>
+        (function ($) {
+            $('input[type="file"]').bind('change', function () {
+                $("#img_text").html($('input[type="file"]').val());
+            });
+        })(jQuery)
+    </script>
     <!-- anexo-->
     <div class="modal fade" id="exampleModalAne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Adicionar Anexo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    anexo
+                    <h4 class="mt-2">ANEXO</h4>
+                    <canvas class="linha"></canvas>
+                    <label>TIPO DE ANEXO*</label>
+                    <select class="form-select">
+                        <option selected>Selecione</option>
+                        <option>CNH - Carteira Nacional de Habilitação</option>
+                        <option>CRLV - Certificado de Registro e Licenciamento de Veículo</option>
+                        <option>Fotos do Acidente </option>
+                    </select>
+                    <div class="file-input-wrapper mt-2">
+                        <button class="btn btn-primary "><i class="fa fa-plus"></i> Selecione  Anexos</button>
+                        <input type="file" name="image" id="image" value="" />
+                    </div>
+                    <span id="img_text"></span>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
