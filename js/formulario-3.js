@@ -10,6 +10,18 @@ $(() => {
                 $("#municipio").append(`<option value="${cidade.ID}">${cidade.Nome}</option>`))
         })
     });
+
+    $("#estadoPessoa").on("change", () => {
+        fetch('./json/cidades.json')
+        .then(response => response.json())
+        .then(cidades =>{
+            $("#municipioPessoa").html("");
+            cidades
+            .filter(cidade => cidade.Estado === $("#estadoPessoa").prop("value"))
+            .forEach(cidade => 
+                $("#municipioPessoa").append(`<option value="${cidade.ID}">${cidade.Nome}</option>`))
+        })
+    });
     
     $("#fomulario3").submit((e) => {
         if($("input[name=cep]").prop('value', '')
@@ -30,6 +42,19 @@ $(() => {
 
     $("#declaracaoAvaria").on('input', () => {
         contaCaracteresRestantes("#declaracaoAvaria", "#caracteresAvaria");
+    });
+
+    $("form[data-form-pessoa]").submit((e) => {
+        e.preventDefault();
+        let dados = new FormData(e.target);
+        console.log(dados);
+        $("#envolvidos").append(`<tr>
+            <td>${dados.nome}</td>
+            <td>${dados.cpf}</td>
+            <td>${dados.habilitacaoNumero}</td>
+            <td>${dados.habilitacaoCategoria}</td>
+            <td></td>
+            </tr>`);
     });
 
     fetch('./json/estados.json')

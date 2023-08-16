@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Olinda Bate-pronto</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/form3.css">
 
@@ -226,14 +226,14 @@
                                 <table class="table mt-2">
                                     <thead>
                                         <tr>
-                                            <th>Documento</th>
+                                            <th>Nome</th>
+                                            <th>CPF</th>
+                                            <th>Habilitação</th>
                                             <th>Tipo</th>
-                                            <th>Pessoa Nome</th>
-                                            <th>Característica do Veículo</th>
                                             <th>Ação</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="envolvidos">
 
                                     </tbody>
                                 </table>
@@ -340,139 +340,121 @@
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Adicionar Pessoa</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h4 class="mt-2">DADOS PESSOAIS</h4>
-                    <canvas class="linha"></canvas>
-                    <div class="alert alert-primary" role="alert">
-                        <b>CONDUTOR:</b> A pessoa que estava dirigindo o
-                        veículo no momento do acidente.<br>
-
-                        <b>CONDUTOR e PROPRIETÁRIO:</b> A pessoa que é
-                        dono do veículo e estava dirigindo no momento
-                        do acidente.<br>
-
-                        <b>PROPRIETÁRIO:</b> A pessoa que é o dono do
-                        veículo, mas não estava dirigindo no momento
-                        do acidente.<br>
-
-                        <b>PESSOA ENVOLVIDA:</b> A outra parte que se
-                        envolveu no acidente.<br>
-
-                        <b> TESTEMUNHA: </b>A pessoa que presenciou o
-                        acidente.<br>
-
+                <form data-form-pessoa >
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Adicionar Pessoa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="mt-1">Tipo*</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-1">CPF/CNPJ*</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-1">Nome*</label>
-                            <input class="form-control" type="text">
-                            <label class="mt-1">Email*</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-1">Confirmar Email</label>
-                            <input class="form-control" type="text">
-                            <label class="mt-1">Sexo*</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-1">Data de Nascimento*</label>
-                            <input class="form-control mt-2" type="text">
+                    <div class="modal-body">
+                        <h4 class="mt-2">DADOS PESSOAIS</h4>
+                        <canvas class="linha"></canvas>
+                        <div class="alert alert-primary" role="alert">
+                            <b>CONDUTOR:</b> A pessoa que estava dirigindo o
+                            veículo no momento do acidente.<br>
+
+                            <b>CONDUTOR e PROPRIETÁRIO:</b> A pessoa que é
+                            dono do veículo e estava dirigindo no momento
+                            do acidente.<br>
+
+                            <b>PROPRIETÁRIO:</b> A pessoa que é o dono do
+                            veículo, mas não estava dirigindo no momento
+                            do acidente.<br>
+
+                            <b>PESSOA ENVOLVIDA:</b> A outra parte que se
+                            envolveu no acidente.<br>
+
+                            <b> TESTEMUNHA: </b>A pessoa que presenciou o
+                            acidente.<br>
+
                         </div>
-                        <div class="col-md-6">
-                            <label class="mt-1">CEP</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-1">Logradouro</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-1">Número</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-1">Complemento</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-1">Bairro</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-1">Estado</label>
-                            <select class="form-select estado"></select>
-                            <label class="mt-1">Cidade</label>
-                            <select class="form-select municipio"></select>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="mt-1">Tipo*</label>
+                                <input class="form-control mt-2" type="text" name="tipo">
+                                <label class="mt-1">CPF/CNPJ*</label>
+                                <input class="form-control mt-2" type="text" name="cpf">
+                                <label class="mt-1">Nome*</label>
+                                <input class="form-control" type="text" name="nome">
+                                <label class="mt-1">Email*</label>
+                                <input class="form-control mt-2" type="text" name="email">
+                                <label class="mt-1">Confirmar Email</label>
+                                <input class="form-control" type="text" name="confimar-email">
+                                <label class="mt-1">Sexo*</label>
+                                <input class="form-control mt-2" type="text" name="sexo">
+                                <label class="mt-1">Data de Nascimento*</label>
+                                <input class="form-control mt-2" type="text" name="nascimento">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="mt-1">CEP</label>
+                                <input class="form-control mt-2" type="text" name="cep">
+                                <label class="mt-1">Logradouro</label>
+                                <input class="form-control mt-2" type="text" name="logradouro">
+                                <label class="mt-1">Número</label>
+                                <input class="form-control mt-2" type="text" name="numero">
+                                <label class="mt-1">Complemento</label>
+                                <input class="form-control mt-2" type="text" name="complemento">
+                                <label class="mt-1">Bairro</label>
+                                <input class="form-control mt-2" type="text" name="bairro">
+                                <label class="mt-1">Estado</label>
+                                <select class="form-select estado" id="estadoPessoa" name="estado">
+                                    <option>Selecione um estado</option>
+                                </select>
+                                <label class="mt-1">Cidade</label>
+                                <select class="form-select municipio" id="municipioPessoa" name="cidade">
+                                    <option>Selecione um Município</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h4 class="mt-2">DESCREVA O SINISTRO</h4>
+                        <canvas class="linha"></canvas>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea cols="10" rows="10" maxlength="32700" class="form-control"
+                                    id="descreveSinistro" name="sinistro"></textarea>
+                                <b class="text-danger"><span id="caracteresSinistro">32700</span> characters restantes.</b>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-2">CARTEIRA DE HABILITAÇÃO</h4>
+                        <canvas class="linha"></canvas>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Número</label>
+                                <input class="form-control mt-2" type="text" name="habilitacaoNumero">
+                                <label>Categoria</label>
+                                <select class="form-select mt-2" type="text" name="habilitacaoCategoria">
+                                    <option selected>Selecione</option>
+                                    <option>A</option>
+                                    <option>B</option>
+                                    <option>C</option>
+                                    <option>D</option>
+                                    <option>E</option>
+                                    <option>AB</option>
+                                    <option>AC</option>
+                                    <option>AD</option>
+                                    <option>AE</option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label>Validade</label>
+                                <input class="form-control mt-2" type="date" name="habilitacaoValidade">
+                                <label>Estado</label>
+                                <select class="form-select mt-2 estado" type="text" name="habilitacaoEstado">
+                                    <option>Selecione um estado</option>
+                                </select>
+                            </div>
+
                         </div>
                     </div>
-                    <h4 class="mt-2">DESCREVA O SINISTRO</h4>
-                    <canvas class="linha"></canvas>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <textarea cols="10" rows="10" maxlength="32700" class="form-control"
-                                id="descreveSinistro"></textarea>
-                            <b class="text-danger"><span id="caracteresSinistro">32700</span> characters restantes.</b>
-                        </div>
-                    </div>
-
-                    <h4 class="mt-2">CARTEIRA DE HABILITAÇÃO</h4>
-                    <canvas class="linha"></canvas>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Número</label>
-                            <input class="form-control mt-2" type="text">
-                            <label>Categoria</label>
-                            <select class="form-control mt-2" type="text">
-                                <option selected>Selecione</option>
-                                <option>A</option>
-                                <option>B</option>
-                                <option>C</option>
-                                <option>D</option>
-                                <option>E</option>
-                                <option>AB</option>
-                                <option>AC</option>
-                                <option>AD</option>
-                                <option>AE</option>
-                            </select>
-
-                        </div>
-                        <div class="col-md-6">
-                            <label>Validade</label>
-                            <input class="form-control mt-2" type="date">
-                            <label>Estado</label>
-                            <select class="form-control mt-2 estado" type="text">
-
-
-                            </select>
-                        </div>
-
-                    </div>
-                    <h4 class="mt-2">VEÍCULO</h4>
-                    <canvas class="linha"></canvas>
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalAne" type="submit">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalAne" data-adiciona-pessoa>
                             Adicionar
                         </button>
                     </div>
-
-                    <div class="col-md-12">
-                        <table class="table mt-2">
-                            <thead>
-                                <tr>
-                                    <th>Placa</th>
-                                    <th>Tipo</th>
-                                    <th>Caracterítica</th>
-                                    <th>Ação</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -535,7 +517,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" data-adicionar-veiculo>
+                        Adicionar
+                    </button>
                 </div>
             </div>
         </div>
