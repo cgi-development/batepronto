@@ -10,8 +10,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <script src="js/formulario-3.js"></script>
+    <style>
+        hr {
+            color: #286fb6 !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -103,6 +109,204 @@
                                 </div>
                             </div>
                         </div>
+                        <canvas class="linha mt-2 p-2 "></canvas>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label><b>Data do Sinistro*</b> </label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-md-8">
+                                <label><b>Ponto de referência</b></label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <canvas class="linha mt-2 p-2 "></canvas>
+                        <div class="row">
+                            <h3>CIRCUNSTÂNCIAS DO SINISTRO</h3>
+                            <div class="col-md-6">
+                                <label><b>Sentido da Via*</b> </label>
+                                <select class="form-select">
+
+                                    <option selected>Selecione</option>
+                                    <option>Cidade</option>
+                                    <option>Outro</option>
+                                    <option>Subúrbio</option>
+
+                                </select>
+                                <br>
+                                <label><b>Sinalização da Via*</b> </label>
+                                <select class="form-select">
+                                    <option selected>Selecione</option>
+                                    <option>Estava em perfeito estado</option>
+                                    <option>Estava ilegível</option>
+                                    <option>Estava incompleta</option>
+                                    <option>Não existe sinalização</option>
+                                </select>
+                                <br>
+                                <label><b>Condição da Via*</b> </label>
+                                <select class="form-select">
+                                    <option selected>Selecione</option>
+                                    <option>Alagada</option>
+                                    <option>Arenosa</option>
+                                    <option>Molhada</option>
+                                    <option>Oleosa</option>
+                                    <option>Seca</option>
+                                </select>
+                                <br>
+                                <label><b>Natureza do Sinistro*</b> </label>
+                                <select class="form-select">
+                                    <option selected>Selecione</option>
+                                    <option>Atropelamento de animal</option>
+                                    <option>Atropelamento de pedestre</option>
+                                    <option>Capotamento</option>
+                                    <option>Choque em obejto fixo</option>
+                                    <option>Choque em veículo parado / estacionado</option>
+                                    <option>Colisão envolvendo ciclista</option>
+                                    <option>Colisão frontal</option>
+                                    <option>Colisão lateral</option>
+                                    <option>Colisão tranversal</option>
+                                    <option>Colisão traseira</option>
+                                    <option>Engavetamento</option>
+                                    <option>Outro</option>
+                                    <option>Tombamento</option>
+                                </select>
+                                <br>
+                            </div>
+                            <div class="col-md-6">
+                                <label><b>Local da Via*</b> </label>
+                                <select class="form-select">
+                                    <option selected>Selecione</option>
+                                    <option>Ao logo da via</option>
+                                    <option>Em um cruzamento</option>
+                                    <option>Em um estacionamento</option>
+                                    <option>Em uma esquina</option>
+                                    <option>Em uma rotatória</option>
+                                    <option>Sob um túnel</option>
+                                    <option>Sobre um viaduto</option>
+                                    <option>Sobre uma ponte</option>
+                                </select>
+                                <br>
+                                <label><b>Tempo/Clima*</b> </label>
+                                <select class="form-select">
+                                    <option selected>Selecione</option>
+                                    <option>Chovia na hora do acidente</option>
+                                    <option>Esta bom</option>
+                                    <option>Estava nublado</option>
+                                </select>
+                                <br>
+                                <label><b>Semáforo*</b> </label>
+                                <select class="form-select">
+                                    <option selected>Selecione</option>
+                                    <option>Estava com defeito</option>
+                                    <option>Estava desligado</option>
+                                    <option>Estava intermitente</option>
+                                    <option>Estava sem defeito</option>
+                                    <option>Não existia nolocal</option>
+                                </select>
+                                <br>
+                                <label><b>Conservação da Via*</b> </label>
+                                <select class="form-select">
+                                    <option selected>Selecione</option>
+                                    <option>Em obras</option>
+                                    <option>Mal Conservada</option>
+                                    <option>Mal iluminada</option>
+                                    <option>Perfeito estado</option>
+                                </select>
+                                <br>
+                            </div>
+                        </div>
+                        <canvas class="linha mt-2 p-2 "></canvas>
+                        <div class="row">
+                            <h3>ENVOLVIDOS</h3>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalEnv">
+                                    Adicionar Pessoa
+                                </button>
+
+                            </div>
+                            <br>
+                            <div class="col-md-12">
+                                <table class="table mt-2">
+                                    <thead>
+                                        <tr>
+                                            <th>Documento</th>
+                                            <th>Tipo</th>
+                                            <th>Pessoa Nome</th>
+                                            <th>Característica do Veículo</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <canvas class="linha mt-2 p-2 "></canvas>
+                        <div class="row">
+                            <h3>VEÍCULOS ENVOLVIDOS</h3>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalVe">
+                                    Adicionar Veículo
+                                </button>
+                            </div>
+                            <div class="col-md-8">
+                                <span>O veículo deve estar vinculado a uma pessoa. Mas, caso tenha-se evadido ou não
+                                    tenha os dados do proprietário, você pode cadastrar separademente clicando em <b>
+                                        Adicionar Veículo.</b></span>
+
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table mt-2">
+                                    <thead>
+                                        <tr>
+                                            <th>Placa</th>
+                                            <th>Tipo</th>
+                                            <th>Caracterítica</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <canvas class="linha mt-2 p-2 "></canvas>
+                        <div class="row">
+                            <h3>ANEXOS</h3>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalAne">
+                                    Adicionar Anexo
+                                </button>
+                            </div>
+                            <div class="col-md-8">
+                                <span>
+
+                                    É necessário anexar a<b> CNH</b> do condutor e o<b> CRLV </b>do veículo.
+
+                                    Só é permitido 4 imagens por veículo.</b></span>
+
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table mt-2">
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo</th>
+                                            <th>Anexo</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
                         <br>
                         <button class="btn btn-success mt-2 " onclick="location.href = 'formulario-2.html'">
@@ -130,6 +334,166 @@
             <li class=""><img src="imagens/logofooter.png" alt="" width="70%"></li>
         </ul>
     </footer>
+
+    <!--
+        Moldals
+    -->
+
+    <!-- envolvidos-->
+    <div class="modal fade modal-lg" id="exampleModalEnv" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Adicionar Pessoa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>DADOS PESSOAIS</h4>
+                    <div class="alert alert-primary" role="alert">
+                        <b>CONDUTOR:</b> A pessoa que estava dirigindo o
+                        veículo no momento do acidente.<br>
+
+                        <b>CONDUTOR e PROPRIETÁRIO:</b> A pessoa que é
+                        dono do veículo e estava dirigindo no momento
+                        do acidente.<br>
+
+                        <b>PROPRIETÁRIO:</b> A pessoa que é o dono do
+                        veículo, mas não estava dirigindo no momento
+                        do acidente.<br>
+
+                        <b>PESSOA ENVOLVIDA:</b> A outra parte que se
+                        envolveu no acidente.<br>
+
+                        <b> TESTEMUNHA: </b>A pessoa que presenciou o
+                        acidente.<br>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="mt-1">Tipo*</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-1">CPF/CNPJ*</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-1">Nome*</label>
+                            <input class="form-control" type="text">
+                            <label class="mt-1">Email*</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-1">Confirmar Email</label>
+                            <input class="form-control" type="text">
+                            <label class="mt-1">Sexo*</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-1">Data de Nascimento*</label>
+                            <input class="form-control mt-2" type="text">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="mt-1">CEP</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-1">Logradouro</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-1">Número</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-1">Complemento</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-1">Bairro</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-1">Estado</label>
+                            <input class="form-control mt-2" type="text">
+                            <label class="mt-1">Cidade</label>
+                            <input class="form-control mt-2" type="text">
+                        </div>
+                    </div>
+                    <h4>DESCREVA O SINISTRO</h4>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <textarea cols="10" rows="10" class="form-control"></textarea>
+                            <b class="text-danger">32700 characters restantes.</b>
+                        </div>
+                    </div>
+
+                    <h4>CARTEIRA DE HABILITAÇÃO</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Número</label>
+                            <input class="form-control mt-2" type="text">
+                            <label>Categoria</label>
+                            <select class="form-control mt-2" type="text">
+                                <option selected>Selecione</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>AB</option>
+                                <option>AC</option>
+                                <option>AD</option>
+                                <option>AE</option>
+                            </select>
+
+                        </div>
+                        <div class="col-md-6">
+                            <label>Validade</label>
+                            <input class="form-control mt-2" type="date">
+                            <label>Estado</label>
+                            <select class="form-control mt-2" type="text" id="estado">
+                                
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    <h4>VEÍCULO</h4>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--fim do moldal envo.-->
+
+    <!-- veículos-->
+    <div class="modal fade" id="exampleModalVe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    veiculos
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fim veículos-->
+    <!-- anexo-->
+    <div class="modal fade" id="exampleModalAne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    anexo
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fim anexo-->
+
 </body>
 
 </html>

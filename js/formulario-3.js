@@ -1,10 +1,11 @@
 $(() => {
-    fetch('../json/estados.json')
+    fetch('./json/estados.json')
     .then((response) => response.json())
     .then((estados) => estados.forEach(estado => 
+       
         $("#estado").append(`<option>${estado.Nome}</option>`)
         ));
-    
+    console.log(estados.Nome);
     $("#fomulario3").submit((e) => {
         if($("input[name=cep]").prop('value', '')
         || $("input[name=cep]").prop('data-valido', 'false')
