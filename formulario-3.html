@@ -119,6 +119,7 @@
                         <canvas class="linha mt-2 p-2 "></canvas>
                         <div class="row">
                             <h3>CIRCUNSTÂNCIAS DO SINISTRO</h3>
+                            <h6>Descreva a ocorrência</h6>
                             <div class="col-md-6">
                                 <label><b>Sentido da Via*</b> </label>
                                 <select class="form-select">
@@ -197,7 +198,7 @@
                                     <option>Estava desligado</option>
                                     <option>Estava intermitente</option>
                                     <option>Estava sem defeito</option>
-                                    <option>Não existia nolocal</option>
+                                    <option>Não existia no local</option>
                                 </select>
                                 <br>
                                 <label><b>Conservação da Via*</b> </label>
@@ -213,7 +214,8 @@
                         </div>
                         <canvas class="linha mt-2 p-2 "></canvas>
                         <div class="row">
-                            <h3>ENVOLVIDOS</h3>
+                            <h3><i class="fa fa-person"></i> ENVOLVIDOS</h3>
+                            <h6>Condutores envolvidos na ocorrência.</h6>
                             <div class="col-md-2">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#exampleModalEnv">
@@ -242,7 +244,7 @@
                         </div>
                         <canvas class="linha mt-2 p-2 "></canvas>
                         <div class="row">
-                            <h3>VEÍCULOS ENVOLVIDOS</h3>
+                            <h3><i class="fa fa-car"></i> VEÍCULOS ENVOLVIDOS</h3>
                             <div class="col-md-2">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#exampleModalVe">
@@ -250,7 +252,7 @@
                                 </button>
                             </div>
                             <div class="col-md-8">
-                                <span>O veículo deve estar vinculado a uma pessoa. Mas, caso tenha-se evadido ou não
+                                <span>Cada veículo deve estar vinculado a uma pessoa. Mas, caso tenha-se evadido ou não
                                     tenha os dados do proprietário, você pode cadastrar separademente clicando em <b>
                                         Adicionar Veículo.</b></span>
 
@@ -273,7 +275,7 @@
                         </div>
                         <canvas class="linha mt-2 p-2 "></canvas>
                         <div class="row">
-                            <h3>ANEXOS</h3>
+                            <h3><i class="fa fa-file"></i> ANEXOS</h3>
                             <div class="col-md-2">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#exampleModalAne">
@@ -369,8 +371,14 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <label class="mt-1">Tipo*</label>
-                                <input class="form-control mt-2" type="text" name="tipo">
+                                <label class="mt-1">Quem?*</label>
+                                <select name="Tipo" id="Tipo" class="form-select">
+                                    <option value="condutor(a)">condutor(a)</option>
+                                    <option value="condutor(a) e proprietário(a)">condutor e proprietário</option>
+                                    <option value="proprietário(a)">prprietário(a)</option>
+                                    <option value="envolvida">pessoa envolvida</option>
+                                    <option value="testemunha">testemunha</option>
+                                </select>
                                 <label class="mt-1">CPF/CNPJ*</label>
                                 <input class="form-control mt-2" type="text" name="cpf">
                                 <label class="mt-1">Nome*</label>

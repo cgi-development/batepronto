@@ -90,7 +90,7 @@ $(() => {
 
         dados.forEach((value, key) => {
             console.log([key, value]);
-            if(key == "anexoArquivo"){
+            if(key === "anexoArquivo"){
                 dadosFormatados[key] = value.name;
             }else{
                 dadosFormatados[key] = value;
