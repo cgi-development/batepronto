@@ -47,12 +47,17 @@ $(() => {
     $("form[data-form-pessoa]").submit((e) => {
         e.preventDefault();
         let dados = new FormData(e.target);
-        console.log(dados);
+        let dadosFormatados = [];
+
+        dados.forEach((value, key) => {
+            dadosFormatados[key] = value;
+        });
+
         $("#envolvidos").append(`<tr>
-            <td>${dados.nome}</td>
-            <td>${dados.cpf}</td>
-            <td>${dados.habilitacaoNumero}</td>
-            <td>${dados.habilitacaoCategoria}</td>
+            <td>${dadosFormatados['nome']}</td>
+            <td>${dadosFormatados['cpf']}</td>
+            <td>${dadosFormatados['habilitacaoNumero']}</td>
+            <td>${dadosFormatados['habilitacaoCategoria']}</td>
             <td></td>
             </tr>`);
     });
