@@ -297,7 +297,7 @@
                                             <th>Ação</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="anexos">
 
                                     </tbody>
                                 </table>
@@ -530,13 +530,6 @@
         </div>
     </div>
     <!-- fim veículos-->
-    <script>
-        (function ($) {
-            $('input[type="file"]').bind('change', function () {
-                $("#img_text").html($('input[type="file"]').val());
-            });
-        })(jQuery)
-    </script>
     <!-- anexo-->
     <div class="modal fade" id="exampleModalAne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -545,26 +538,28 @@
                     <h5 class="modal-title" id="exampleModalLabel">Adicionar Anexo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <h4 class="mt-2">ANEXO</h4>
-                    <canvas class="linha"></canvas>
-                    <label>TIPO DE ANEXO*</label>
-                    <select class="form-select">
-                        <option selected>Selecione</option>
-                        <option>CNH - Carteira Nacional de Habilitação</option>
-                        <option>CRLV - Certificado de Registro e Licenciamento de Veículo</option>
-                        <option>Fotos do Acidente </option>
-                    </select>
-                    <div class="file-input-wrapper mt-2">
-                        <button class="btn btn-primary "><i class="fa fa-plus"></i> Selecione Anexos</button>
-                        <input type="file" name="image" id="image" value="" />
+                <form action="" data-form-anexo>
+                    <div class="modal-body">
+                        <h4 class="mt-2">ANEXO</h4>
+                        <canvas class="linha"></canvas>
+                        <label>TIPO DE ANEXO*</label>
+                        <select class="form-select" name="anexoTipo">
+                            <option selected>Selecione</option>
+                            <option value="cnh">CNH - Carteira Nacional de Habilitação</option>
+                            <option value="crlv">CRLV - Certificado de Registro e Licenciamento de Veículo</option>
+                            <option value="foto">Fotos do Acidente </option>
+                        </select>
+                        <div class="file-input-wrapper mt-2">
+                            <button class="btn btn-primary "><i class="fa fa-plus"></i> Selecione Anexos</button>
+                            <input type="file" name="anexoArquivo" id="anexoArquivo" value="" />
+                        </div>
+                        <span id="anexoNome"></span>
                     </div>
-                    <span id="img_text"></span>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Adicionar anexo</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

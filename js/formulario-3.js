@@ -79,6 +79,31 @@ $(() => {
             </tr>`);
     });
 
+    $('input[type="file"]').bind('change', function () {
+        $("#anexoNome").html($('input[type="file"]').val());
+    });
+
+    $("form[data-form-anexo]").submit((e) => {
+        e.preventDefault();
+        let dados = new FormData(e.target);
+        let dadosFormatados = [];
+
+        dados.forEach((value, key) => {
+            console.log([key, value]);
+            if(key == "anexoArquivo"){
+                dadosFormatados[key] = value.name;
+            }else{
+                dadosFormatados[key] = value;
+            }
+        });
+
+        $("#anexos").append(`<tr>
+            <td>${dadosFormatados['anexoTipo']}</td>
+            <td>${dadosFormatados['anexoArquivo']}</td>
+            <td><a onclick="$(this).parent().parent().remove()"><i class="fa fa-close text-danger"></i></a></td>
+            </tr>`);
+    });
+
     fetch('./json/estados.json')
     .then((response) => response.json())
     .then((estados) => estados.forEach(estado => {
