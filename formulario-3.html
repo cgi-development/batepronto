@@ -261,11 +261,11 @@
                                         <tr>
                                             <th>Placa</th>
                                             <th>Tipo</th>
-                                            <th>Caracterítica</th>
+                                            <th>Característica</th>
                                             <th>Ação</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="veiculos">
 
                                     </tbody>
                                 </table>
@@ -470,57 +470,62 @@
                     <h5 class="modal-title" id="exampleModalLabel">Adicionar Veículos</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <h4 class="mt-2">INFORMAÇÕES DO VEÍCULO</h4>
-                    <canvas class="linha"></canvas>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="mt-2">Tipo do Veículo*</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-2">Placa</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-2">Renavam</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-2">Cor</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-2">Marca</label>
-                            <input class="form-control mt-2" type="text">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="mt-2">Modelo</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-2">Chassi</label>
-                            <input class="form-control mt-2" type="text">
-                            <label class="mt-2">Estado</label>
-                            <select class="form-select estado" id="estado"></select>
-
-                            <label class="mt-2">Município</label>
-                            <select class="form-select municipio" id="municipio"></select>
-                        </div>
+                <form data-form-veiculo>
+                    <div class="modal-body">
+                        <h4 class="mt-2">INFORMAÇÕES DO VEÍCULO</h4>
+                        <canvas class="linha"></canvas>
                         <div class="row">
-                            <h4 class="mt-2">DECLARAÇÃO DAS AVARIAS</h4>
-                            <canvas class="linha"></canvas>
-                            <div class="col-md-11">
-                                <textarea cols="10" rows="10" maxlength="32700" class="form-control"
+                            <div class="col-md-6">
+                                <label class="mt-2">Tipo do Veículo*</label>
+                                <input class="form-control mt-2" type="text" name="veiculoTipo">
+                                <label class="mt-2">Placa</label>
+                                <input class="form-control mt-2" type="text" name="veiculoPlaca">
+                                <label class="mt-2">Renavam</label>
+                                <input class="form-control mt-2" type="text" name="veiculoRenavam">
+                                <label class="mt-2">Cor</label>
+                                <input class="form-control mt-2" type="text" name="veiculoCor">
+                                <label class="mt-2">Marca</label>
+                                <input class="form-control mt-2" type="text" name="veiculoMarca">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="mt-2">Modelo</label>
+                                <input class="form-control mt-2" type="text" name="veiculoModelo">
+                                <label class="mt-2">Chassi</label>
+                                <input class="form-control mt-2" type="text" name="veiculoChassi">
+                                <label class="mt-2">Estado</label>
+                                <select class="form-select estado" id="estado" name="veiculoEstado">
+                                    <option>Selecione um estado</option>
+                                </select>
+                                <label class="mt-2">Município</label>
+                                <select class="form-select municipio" id="municipio" name="veiculoMunicipio">
+                                    <option>Selecione um município</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <h4 class="mt-2">DECLARAÇÃO DAS AVARIAS</h4>
+                                <canvas class="linha"></canvas>
+                                <div class="col-md-11">
+                                    <textarea cols="10" rows="10" maxlength="32700" class="form-control"
                                     id="declaracaoAvaria"></textarea>
-                                <b class="text-danger"><span id="caracteresAvaria">32700</span> characters
-                                    restantes.</b>
-                            </div>
-                            <div class="col-md-12 mt-1 p-1 px-1">
-                                <input type="checkbox" id="correu"><span><label form="correu"> &nbsp;Veículo evadiu-se
-                                        do local.</label></span>
-                            </div>
+                                    <b class="text-danger"><span id="caracteresAvaria">32700</span> characters
+                                        restantes.</b>
+                                </div>
+                                <div class="col-md-12 mt-1 p-1 px-1">
+                                    <input type="checkbox" id="correu"><span><label form="correu"> &nbsp;Veículo evadiu-se
+                                            do local.</label></span>
+                                </div>
 
+                            </div>
                         </div>
-                    </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-adicionar-veiculo>
-                        Adicionar
-                    </button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">
+                            Adicionar
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

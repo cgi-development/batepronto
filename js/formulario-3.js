@@ -62,6 +62,23 @@ $(() => {
             </tr>`);
     });
 
+    $("form[data-form-veiculo]").submit((e) => {
+        e.preventDefault();
+        let dados = new FormData(e.target);
+        let dadosFormatados = [];
+
+        dados.forEach((value, key) => {
+            dadosFormatados[key] = value;
+        });
+
+        $("#veiculos").append(`<tr>
+            <td>${dadosFormatados['veiculoPlaca']}</td>
+            <td>${dadosFormatados['veiculoTipo']}</td>
+            <td>${dadosFormatados['veiculoMarca']} ${dadosFormatados['veiculoModelo']}</td>
+            <td><a onclick="$(this).parent().parent().remove()"><i class="fa fa-close text-danger"></i></a></td>
+            </tr>`);
+    });
+
     fetch('./json/estados.json')
     .then((response) => response.json())
     .then((estados) => estados.forEach(estado => {
