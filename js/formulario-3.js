@@ -58,7 +58,7 @@ $(() => {
             <td>${dadosFormatados['cpf']}</td>
             <td>${dadosFormatados['habilitacaoNumero']}</td>
             <td>${dadosFormatados['habilitacaoCategoria']}</td>
-            <td></td>
+            <td><a onclick="$(this).parent().parent().remove()"><i class="fa fa-close text-danger"></i></a></td>
             </tr>`);
     });
 
