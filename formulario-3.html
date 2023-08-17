@@ -65,7 +65,7 @@
                     </ul>
                 </div>
                 <div class="form-conteudo">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form id="formSinistro" action="" method="post" enctype="multipart/form-data">
                         <h1 class="text-center">LOCAL DO SINISTRO</h1>
 
                         <div class="container text-center">
@@ -122,7 +122,7 @@
                             <h6>Descreva a ocorrência</h6>
                             <div class="col-md-6">
                                 <label><b>Sentido da Via*</b> </label>
-                                <select class="form-select">
+                                <select name="sentidosinistro" class="form-select">
 
                                     <option selected>Selecione</option>
                                     <option>Cidade</option>
@@ -132,7 +132,7 @@
                                 </select>
                                 <br>
                                 <label><b>Sinalização da Via*</b> </label>
-                                <select class="form-select">
+                                <select name ="sinalizacaosinistro" class="form-select">
                                     <option selected>Selecione</option>
                                     <option>Estava em perfeito estado</option>
                                     <option>Estava ilegível</option>
@@ -141,7 +141,7 @@
                                 </select>
                                 <br>
                                 <label><b>Condição da Via*</b> </label>
-                                <select class="form-select">
+                                <select name="condicaosinistro" class="form-select">
                                     <option selected>Selecione</option>
                                     <option>Alagada</option>
                                     <option>Arenosa</option>
@@ -151,7 +151,7 @@
                                 </select>
                                 <br>
                                 <label><b>Natureza do Sinistro*</b> </label>
-                                <select class="form-select">
+                                <select class="form-select" name="naturezasinistro">
                                     <option selected>Selecione</option>
                                     <option>Atropelamento de animal</option>
                                     <option>Atropelamento de pedestre</option>
@@ -171,7 +171,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label><b>Local da Via*</b> </label>
-                                <select class="form-select">
+                                <select class="form-select" name="localsinistro">
                                     <option selected>Selecione</option>
                                     <option>Ao logo da via</option>
                                     <option>Em um cruzamento</option>
@@ -184,7 +184,7 @@
                                 </select>
                                 <br>
                                 <label><b>Tempo/Clima*</b> </label>
-                                <select class="form-select">
+                                <select class="form-select" name="temposinistro">
                                     <option selected>Selecione</option>
                                     <option>Chovia na hora do acidente</option>
                                     <option>Esta bom</option>
@@ -192,7 +192,7 @@
                                 </select>
                                 <br>
                                 <label><b>Semáforo*</b> </label>
-                                <select class="form-select">
+                                <select class="form-select" name="semaforosinistro">
                                     <option selected>Selecione</option>
                                     <option>Estava com defeito</option>
                                     <option>Estava desligado</option>
@@ -202,7 +202,7 @@
                                 </select>
                                 <br>
                                 <label><b>Conservação da Via*</b> </label>
-                                <select class="form-select">
+                                <select class="form-select" name="conservacaosinistro">
                                     <option selected>Selecione</option>
                                     <option>Em obras</option>
                                     <option>Mal Conservada</option>
