@@ -65,22 +65,23 @@
                 <div class="form-conteudo">
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="alert alert-success text-center" role="alert">
-                            <h4 class="alert-heading">Concluido!</h4>
-                            <p>Obrigado Senhor(a), se cadastro foi realizado com sucesso.</p>
+                            <h4 class="alert-heading">Concluído!</h4>
+                            <p>Obrigado Senhor(a) <span class="nome"></span>. Seu cadastro foi realizado com sucesso.</p>
                             <hr>
                             <p class="mb-0">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label class="mt-2"><b>Protocolo:</b> </label><span>
-                                        51515d1a51sd5aeF</span><br>
-                                    <label class="mt-2"> <b>Nome do Condutor:</b></label><span> Luiz
-                                        Fernando</span>
+                                    <label class="mt-2"><b>Protocolo:</b> </label>
+                                    <span class="protocolo"></span>
+                                    <br>
+                                    <label class="mt-2"> <b>Nome do Condutor:</b></label>
+                                    <span class="condutor"></span>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="mt-2"> <b>Local:</b></label><span> Rua José
-                                        Cariolando</span><br>
-                                    <label class="mt-2"> <b>Tipo de Sinistro:</b></label><span> Batida Frontal de
-                                        Veículos</span>
+                                    <label class="mt-2"> <b>Local:</b></label>
+                                    <span class="local"></span><br>
+                                    <label class="mt-2"> <b>Tipo de Sinistro:</b></label>
+                                    <span class="tipo"></span>
                                 </div>
                             </div>
 
@@ -89,11 +90,11 @@
                         </div>
 
                         <br>
-                        <button class="btn btn-success mt-2 ">
+                        <button class="btn btn-success mt-2 " onclick="location.href = './formulario-3.html'">
                             <i class="bi bi-arrow-left"></i>
                             <span>Anterior</span>
                         </button>
-                        <button class="btn btn-primary mt-2 ">
+                        <button class="btn btn-primary mt-2 " onclick="location.href = './formulario-1.html'">
                             <i class="bi bi-arrow-right"></i>
                             <span>Concluir</span>
                         </button>

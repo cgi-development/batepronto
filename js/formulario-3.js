@@ -1,4 +1,5 @@
 $(() => {
+    localStorage.clear();
     $("#estado").on("change", () => {
         fetch('./json/cidades.json')
             .then(response => response.json())
@@ -123,7 +124,7 @@ $(() => {
                 obj.cpf = $(linha).find('td:eq(1)').html();
                 obj.habilitacao = $(linha).find('td:eq(2)').html();
                 obj.tipo = $(linha).find('td:eq(3)').html();
-                dados.append(`envolvidos${contadorenvolvidos}`, obj);
+                dados.append(`envolvidos${contadorenvolvidos}`, JSON.stringify(obj));
                 contadorenvolvidos++;
             }
         )
@@ -134,7 +135,7 @@ $(() => {
                 obj.placa = $(linha).find('td:eq(0)').html();
                 obj.tipo = $(linha).find('td:eq(1)').html();
                 obj.caracteristica = $(linha).find('td:eq(2)').html();
-                dados.append(`veiculos${contadorveiculos}`, obj);
+                dados.append(`veiculos${contadorveiculos}`, JSON.stringify(obj));
                 contadorveiculos++;
             }
         )
@@ -144,11 +145,17 @@ $(() => {
                 let obj = { tipo: "", anexos: ""}
                 obj.tipo = $(linha).find('td:eq(0)').html();
                 obj.anexos = $(linha).find('td:eq(1)').html();
-                dados.append(`anexos${contadoranexos}`, obj);
+                dados.append(`anexos${contadoranexos}`, JSON.stringify(obj));
                 contadoranexos++;
             }
         )
         console.log(dados);
+        dados.forEach((value, key) => {
+            localStorage.setItem(key, JSON.stringify(value));
+        });
+        
+        console.log(localStorage);
+        window.location.href = "./formulario-4.html";
     })
 
 });
