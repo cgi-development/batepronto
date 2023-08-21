@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olinda Bate-pronto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="js/formulario-1.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <header class="header">
+        <nav class="navbar">
+            <div class="menutopoL">
+                <img src="imagens/logo.png" width="150px">
+            </div>
+            <div class="menutopoR">
+                <ul class="lista-header">
+                    <li><i class="fa-solid fa-lock icon"></i><a class="botao-header1" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" type="button">Acompanhe Aqui</a></li>
+                    <li><i class="fa-solid fa-circle-info icon"></i><a class="botao-header2" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal2" type="button">Acesso
+                            Restrito</a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <canvas class="linha-amarela">
+
+    </canvas>
+
+
+    <main class="py-2 px-5">
+        <div class="card" id="print" class="conteudo">
+            <div class="card-body p-2 m-2">
+                <canvas class="linha"></canvas>
+
+                <div class="form-conteudo">
+                    <h1 class="text-center">Sinistro</h1>
+
+                    <div class="form-conteudo">
+
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label for="cep" class="form-label">CEP</label>
+                                        <p class="fw-bold">53300-080</p>
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label for="logradouro" class="form-label">Logradouro</label>
+
+                                        <p class="fw-bold">José Cariolando</p>
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label for="bairro" class="form-label">Bairro</label>
+                                        <p class="fw-bold">Peixinhos</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label for="complemento" class="form-label">Complemento</label>
+                                        <p class="fw-bold">CASA</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <canvas class="linha mt-2 p-2 "></canvas>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label">Data do Sinistro </label>
+                                <p class="fw-bold">01/01/2017</p>
+                            </div>
+                            <div class="col-md-8">
+                                <label class="form-label">Ponto de referência</label>
+                                <p class="fw-bold">Em frente à praça do Carmo</p>
+                            </div>
+                        </div>
+                        <canvas class="linha mt-2 p-2 "></canvas>
+                        <div class="row">
+                            <h3>CIRCUNSTÂNCIAS DO SINISTRO</h3>
+                            <h6>Descreva a ocorrência</h6>
+                            <div class="col-md-6">
+                                <label class="form-label">Sentido da Via</label>
+                                <p class="fw-bold">Subúrbio</p>
+                                <br>
+                                <label class="form-label">Sinalização da Via </label>
+                                <p class="fw-bold">Estava em perfeito estado</p>
+                                <br>
+                                <label class="form-label">Condição da Via </label>
+                                <p class="fw-bold">seca</p>
+                                <br>
+                                <label class="form-label">Natureza do Sinistro </label>
+                                <p class="fw-bold">Colisão frontal</p>
+                                <br>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Local da Via </label>
+                                <p class="fw-bold">Ao longo da via</p>
+                                <br>
+                                <label class="form-label">Tempo/Clima </label>
+                                <p class="fw-bold">Estava bom</p>
+                                <br>
+                                <label class="form-label">Semáforo</label>
+                                <p class="fw-bold">Não existia no local</p>
+                                <br>
+                                <label class="form-label">Conservação da Via</label>
+                                <p class="fw-bold">Perfeito estado</p>
+                                <br>
+                            </div>
+                        </div>
+                        <canvas class="linha mt-2 p-2 "></canvas>
+                        <div class="row">
+                            <h3><i class="fa fa-person"></i> ENVOLVIDOS</h3>
+                            <h6>Condutores envolvidos na ocorrência.</h6>
+                            <br>
+                            <div class="col-md-12">
+                                <table class="table mt-2">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>CPF</th>
+                                            <th>Habilitação</th>
+                                            <th>Tipo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="envolvidos">
+                                        <tr>
+                                            <td>Fulano de Tal</td>
+                                            <td>0123456789</td>
+                                            <td>5555555</td>
+                                            <td>B</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Beltrano de Tal</td>
+                                            <td>9876543210</td>
+                                            <td>6666666</td>
+                                            <td>AB</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <canvas class="linha mt-2 p-2 "></canvas>
+                        <div class="row">
+                            <h3><i class="fa fa-car"></i> VEÍCULOS ENVOLVIDOS</h3>
+                            <div class="col-md-12">
+                                <table class="table mt-2">
+                                    <thead>
+                                        <tr>
+                                            <th>Placa</th>
+                                            <th>Tipo</th>
+                                            <th>Característica</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="veiculos">
+                                        <tr>
+                                            <td>ABC-1234</td>
+                                            <td>Carro</td>
+                                            <td>Reanult Kwid Preto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DEF-5678</td>
+                                            <td>Carro</td>
+                                            <td>Chevrolet Onix Prata</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <canvas class="linha mt-2 p-2 "></canvas>
+                        <div class="row">
+                            <h3><i class="fa fa-file"></i> ANEXOS</h3>
+                            <div class="col-md-12 d-flex flex-wrap justify-content-between">
+                                <div class="card">
+                                    <img width="300"
+                                        src="imagens/carteira-de-motorista-do-pais-brasil-em-design-plano_88235-738-removebg-preview.png"
+                                        alt="" class="img-card-top">
+                                    <div class="card-body">
+                                        <p class="card-text text-center">
+                                            CNH de Fulano de Tal
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img width="300"
+                                        src="imagens/carteira-de-motorista-do-pais-brasil-em-design-plano_88235-738-removebg-preview.png"
+                                        alt="" class="img-card-top">
+                                    <div class="card-body">
+                                        <p class="card-text text-center">
+                                            CNH de Beltrano de Tal
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img width="300" src="imagens/carcrash.jpg" alt="" class="img-card-top">
+                                    <div class="card-body">
+                                        <p class="card-text text-center">
+                                            Foto do acidente
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <button class="btn btn-success mt-2 " type="button" onclick="cont();" >
+                            <span><i class="fa fa-file-pdf"></i> Imprimir</span>
+                        </button>
+                        
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <footer>
+        <ul class="ulfooter">
+            <li class=""><img src="imagens/footer.png" alt="" width="10%"></li>
+            <li class=""><img src="imagens/logofooter.png" alt="" width="70%"></li>
+        </ul>
+    </footer>
+</body>
+
+
+<!-- Modal acompanhe aqui  -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                <form action="" method="post">
+                    <h4 class="modal-title mb-3">Consulte seu sinistro por número de protocolo</h4>
+                    <div class="form-group">
+                        <lable class="form-label">CPF</lable>
+                        <input type="text" class="form-control" name="cpf">
+                    </div>
+                    <div class="form-group">
+                        <lable class="form-label">Protocolo</lable>
+                        <input type="text" class="form-control" name="protocolo">
+                    </div>
+                    <div class="form-group mt-2">
+                        <button class="btn btn-success" type="submit">consultar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                <form action="" method="post">
+                    <h4 class="modal-title">Acesso à área restrita</h4>
+                    <div class="form-group">
+                        <lable class="form-label">Login</lable>
+                        <input type="text" class="form-control" name="login">
+                    </div>
+                    <div class="form-group">
+                        <lable class="form-label">Senha</lable>
+                        <input type="password" class="form-control" name="senha">
+                    </div>
+                    <div class="form-group mt-2">
+                        <button class="btn btn-success" type="submit">entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</html>

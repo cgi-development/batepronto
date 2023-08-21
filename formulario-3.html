@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="js/formulario-3.js"></script>
 
@@ -319,7 +319,7 @@
                             <i class="bi bi-arrow-left"></i>
                             <span>Anterior</span>
                         </button>
-                        <button class="btn btn-primary mt-2 " type="submit">
+                        <button class="btn btn-primary mt-2 " type="submit" >
                             <i class="bi bi-arrow-right"></i>
                             <span>Próximo</span>
                         </button>
@@ -396,23 +396,28 @@
                                 <label class="mt-1">Confirmar Email</label>
                                 <input class="form-control" type="text" name="confimar-email">
                                 <label class="mt-1">Sexo*</label>
-                                <input class="form-control mt-2" type="text" name="sexo">
-                                <label class="mt-1">Data de Nascimento*</label>
-                                <input class="form-control mt-2" type="text" name="nascimento">
+                                <select class="form-select mt-2" name="sexo">
+                                    <option>Escolha uma opção</option>
+                                    <option value="0">Feminino</option>
+                                    <option value="1">Masculino</option>
+                                    <option value="2">Não Escolher</option>
+                                </select>                                
+                                <label class="mt-2">Data de Nascimento*</label>
+                                <input class="form-control mt-2" type="date" name="nascimento">
                             </div>
                             <div class="col-md-6">
                                 <label class="mt-1">CEP</label>
-                                <input class="form-control mt-2" type="text" name="cep">
+                                <input class="form-control mt-2" type="text" name="cep"  id="cep2">
                                 <label class="mt-1">Logradouro</label>
-                                <input class="form-control mt-2" type="text" name="logradouro">
+                                <input class="form-control mt-2" type="text" name="logradouro" id="logradouro2">
                                 <label class="mt-1">Número</label>
-                                <input class="form-control mt-2" type="text" name="numero">
+                                <input class="form-control mt-2" type="text" name="numero" id="numero2">
                                 <label class="mt-1">Complemento</label>
-                                <input class="form-control mt-2" type="text" name="complemento">
+                                <input class="form-control mt-2" type="text" name="complemento" id="complemento2">
                                 <label class="mt-1">Bairro</label>
-                                <input class="form-control mt-2" type="text" name="bairro">
+                                <input class="form-control mt-2" type="text" name="bairro" id="bairro2">
                                 <label class="mt-1">Estado</label>
-                                <select class="form-select estado" id="estadoPessoa" name="estado">
+                                <select class="form-select estado" id="estadoPessoa" name="estado" id="estado2">
                                     <option>Selecione um estado</option>
                                 </select>
                                 <label class="mt-1">Cidade</label>
