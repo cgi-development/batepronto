@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bate Pronto</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
     <header class="header">
         <nav class="navbar">
             <div class="menutopoL">
@@ -17,8 +24,11 @@
             </div>
             <div class="menutopoR">
                 <ul class="lista-header">
-                    <li><i class="fa-solid fa-lock icon"></i><a class="botao-header1" href="#">Acompanhe Aqui</a></li>
-                    <li><i class="fa-solid fa-circle-info icon"></i><a class="botao-header2" href="#">Acesso Restrito</a></li>
+                    <li><i class="fa-solid fa-lock icon"></i><a class="botao-header1" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" type="button">Acompanhe Aqui</a></li>
+                    <li><i class="fa-solid fa-circle-info icon"></i><a class="botao-header2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2" type="button">Acesso
+                            Restrito</a></li>
                 </ul>
             </div>
 
@@ -28,25 +38,80 @@
 
     </canvas>
     <main class="container">
-        <div>
+        <div class="d-flex justify-content-center ">
             <img src="imagens/capa-bate.jpg" alt="">
         </div>
         <div class="botaoclasse">
-            <a class="botao-registro" href="formulario-1.html"><span class="textobotaoregistrar">Registrar Sinistro</span></a>
+            <a class="botao-registro" href="formulario-1.html"><span class="textobotaoregistrar">Registrar
+                    Sinistro</span></a>
         </div>
         <div class="textolaembaixo">
-            De acordo com o artigo 178 do Código de Trânsito Brasileiro (CTB), para assegurar a fluidez e a segurança no trânsito, os envolvidos em sinistros sem vítimas devem remover os veículos do local da colisão (estacionando em local permitido) e proceder com segurança o registro do sinistro, sem gerar transtornos ao trânsito. Em casos de sinistros com vítimas o local deve ser preservado e os veículos não devem ser retirados. 
+            De acordo com o artigo 178 do Código de Trânsito Brasileiro (CTB), para assegurar a fluidez e a segurança no
+            trânsito, os envolvidos em sinistros sem vítimas devem remover os veículos do local da colisão (estacionando
+            em local permitido) e proceder com segurança o registro do sinistro, sem gerar transtornos ao trânsito. Em
+            casos de sinistros com vítimas o local deve ser preservado e os veículos não devem ser retirados.
         </div>
     </main>
 
     <footer>
         <ul class="ulfooter">
-            
-            <li class=""><img src="imagens/footer.png" alt=""  width="10%"></li>
-            <li class=""><img src="imagens/logoimagens/footer.png" alt=""  width="70%"></li>
-            
+
+            <li class=""><img src="imagens/footer.png" alt="" width="10%"></li>
+            <li class=""><img src="imagens/logofooter.png" alt="" width="70%"></li>
+
         </ul>
     </footer>
 </body>
+
+<!-- Modal acompanhe aqui  -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                <form action="" method="post">
+                    <h4 class="modal-title mb-3">Consulte seu sinistro por número de protocolo</h4>
+                    <div class="form-group">
+                        <lable class="form-label">CPF</lable>
+                        <input type="text" class="form-control" name="cpf">
+                    </div>
+                    <div class="form-group">
+                        <lable class="form-label">Protocolo</lable>
+                        <input type="text" class="form-control" name="protocolo">
+                    </div>
+                    <div class="form-group mt-2">
+                        <button class="btn btn-success" type="submit">consultar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                <form action="" method="post">
+                    <h4 class="modal-title">Acesso à área restrita</h4>
+                    <div class="form-group">
+                        <lable class="form-label">Login</lable>
+                        <input type="text" class="form-control" name="login">
+                    </div>
+                    <div class="form-group">
+                        <lable class="form-label">Senha</lable>
+                        <input type="password" class="form-control" name="senha">
+                    </div>
+                    <div class="form-group mt-2">
+                        <button class="btn btn-success" type="submit">entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 </html>
