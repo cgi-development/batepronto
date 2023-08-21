@@ -104,6 +104,7 @@ $(() => {
         </tr>`);
     });
 
+    
     fetch('./json/estados.json')
         .then((response) => response.json())
         .then((estados) => estados.forEach(estado => {
