@@ -11,18 +11,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="js/formulario-3.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
 
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/formulario-3.js"></script>
     <header class="header">
         <nav class="navbar">
             <div class="menutopoL">
@@ -33,7 +30,7 @@
                     <li><i class="fa-solid fa-lock icon"></i><a class="botao-header1" data-bs-toggle="modal"
                             data-bs-target="#exampleModal" type="button">Acompanhe Aqui</a></li>
                     <li><i class="fa-solid fa-circle-info icon"></i><a class="botao-header2" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal2" type="button">Acesso
+                            data-bs-target="#exampleModal2" type="button">Acesso
                             Restrito</a></li>
                 </ul>
             </div>
@@ -140,7 +137,7 @@
                                 </select>
                                 <br>
                                 <label><b>Sinalização da Via*</b> </label>
-                                <select name ="sinalizacaosinistro" class="form-select">
+                                <select name="sinalizacaosinistro" class="form-select">
                                     <option selected>Selecione</option>
                                     <option>Estava em perfeito estado</option>
                                     <option>Estava ilegível</option>
@@ -319,7 +316,7 @@
                             <i class="bi bi-arrow-left"></i>
                             <span>Anterior</span>
                         </button>
-                        <button class="btn btn-primary mt-2 " type="submit" >
+                        <button class="btn btn-primary mt-2 " type="submit">
                             <i class="bi bi-arrow-right"></i>
                             <span>Próximo</span>
                         </button>
@@ -350,7 +347,7 @@
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form data-form-pessoa >
+                <form data-form-pessoa>
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Adicionar Pessoa</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -401,13 +398,13 @@
                                     <option value="0">Feminino</option>
                                     <option value="1">Masculino</option>
                                     <option value="2">Não Escolher</option>
-                                </select>                                
+                                </select>
                                 <label class="mt-2">Data de Nascimento*</label>
                                 <input class="form-control mt-2" type="date" name="nascimento">
                             </div>
                             <div class="col-md-6">
                                 <label class="mt-1">CEP</label>
-                                <input class="form-control mt-2" type="text" name="cep"  id="cep2">
+                                <input class="form-control mt-2" type="text" name="cep" id="cep2">
                                 <label class="mt-1">Logradouro</label>
                                 <input class="form-control mt-2" type="text" name="logradouro" id="logradouro2">
                                 <label class="mt-1">Número</label>
@@ -432,7 +429,8 @@
                             <div class="col-md-12">
                                 <textarea cols="10" rows="10" maxlength="32700" class="form-control"
                                     id="descreveSinistro" name="sinistro"></textarea>
-                                <b class="text-danger"><span id="caracteresSinistro">32700</span> characters restantes.</b>
+                                <b class="text-danger"><span id="caracteresSinistro">32700</span> characters
+                                    restantes.</b>
                             </div>
                         </div>
 
@@ -527,12 +525,13 @@
                                 <canvas class="linha"></canvas>
                                 <div class="col-md-11">
                                     <textarea cols="10" rows="10" maxlength="32700" class="form-control"
-                                    id="declaracaoAvaria"></textarea>
+                                        id="declaracaoAvaria"></textarea>
                                     <b class="text-danger"><span id="caracteresAvaria">32700</span> characters
                                         restantes.</b>
                                 </div>
                                 <div class="col-md-12 mt-1 p-1 px-1">
-                                    <input type="checkbox" id="correu"><span><label form="correu"> &nbsp;Veículo evadiu-se
+                                    <input type="checkbox" id="correu"><span><label form="correu"> &nbsp;Veículo
+                                            evadiu-se
                                             do local.</label></span>
                                 </div>
 
@@ -594,7 +593,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
                 <form action="" method="post">
                     <h4 class="modal-title mb-3">Consulte seu sinistro por número de protocolo</h4>
                     <div class="form-group">
@@ -619,7 +619,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
                 <form action="" method="post">
                     <h4 class="modal-title">Acesso à área restrita</h4>
                     <div class="form-group">
