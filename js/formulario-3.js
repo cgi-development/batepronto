@@ -1,3 +1,5 @@
+var data = new Date();
+
 $(() => {
     $("#estado").on("change", () => {
         fetch('./json/cidades.json')
@@ -150,10 +152,10 @@ $(() => {
                     }
                 )
                 console.log(dados);
-                dados.forEach((value, key) => {
                 localStorage.clear();
-                localStorage.setItem(key, JSON.stringify(value));
-        });
+                dados.forEach((value, key) => {
+                    localStorage.setItem(key, JSON.stringify(value));
+                });
         
         console.log(localStorage);
         window.location.href = "./formulario-4.html";
