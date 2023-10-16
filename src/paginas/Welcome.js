@@ -9,7 +9,7 @@ const Welcome = () => {
         <main className="container">
 
             <Row>
-                <Col className="">
+                <Col>
                     <Banner />
                 </Col>
 
