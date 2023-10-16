@@ -1,0 +1,10 @@
+.container {
+    padding: 0% 20%;
+}
+
+.botaoclasse {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}

@@ -1,0 +1,17 @@
+.botao-registro {
+    background-color: var(--fundoazul);
+    padding: 0.5em 2.5em;
+    line-height: 1.3333333;
+    font-size: 18px;
+    height: 2em;
+    border-radius: 6px;
+    color: var(--branco);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.botao-registro:hover {
+    background-color: var(--fundoamarelo);
+    color: var(--fundoazul);
+}

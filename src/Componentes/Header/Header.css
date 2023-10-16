@@ -1,0 +1,48 @@
+.header {
+    margin: 0;
+    width: 100%;
+    top: 0;
+    height: 3.7em;
+    background-color: var(--fundoazul);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.menutopoR {
+    height: var(--alturaheader);
+    display: flex;
+    align-items: center;
+}
+
+.menutopoL {
+    height: var(--alturaheader);
+}
+
+.lista-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.lista-header li {
+    margin: 15px;
+}
+
+.lista-header i {
+    margin: 5px;
+}
+
+.botao-header1 {
+    color: #fff;
+    text-decoration: none;
+}
+
+.botao-header2 {
+    color: #fff;
+    text-decoration: none;
+}
