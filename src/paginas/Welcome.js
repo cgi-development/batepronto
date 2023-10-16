@@ -1,4 +1,4 @@
-import "style.css";
+import "./style.css";
 import Disclaimer from "../Componentes/Disclaimer";
 import Banner from "../Componentes/Banner";
 import Botao from "../Componentes/Botao";

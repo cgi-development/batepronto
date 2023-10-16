@@ -1,14 +1,7 @@
-import {useNavigate} from "react-router-dom";
-
 const Botao = (rota) => {
-    const navegar = useNavigate();
-
-    const redirect = () => {
-        navegar(rota);
-    }
 
     return (
-    <a className="botao-registro" onClick={redirect}>
+    <a className="botao-registro" href={rota}>
         <span className="textobotaoregistrar">Registrar Sinistro</span>
     </a>
     )

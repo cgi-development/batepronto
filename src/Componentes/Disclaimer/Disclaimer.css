@@ -1,3 +1,5 @@
+@import url(../../paginas/style.css);
+
 .textolaembaixo {
     border-left: 10px solid var(--fundoazul);
     padding-left: 10px;

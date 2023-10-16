@@ -1,3 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-y: scroll;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --fundoazul: #286fb6;
+    --fundoamarelo: #fde01b;
+    --cordotexto: #636363;
+    --branco: #fff;
+    --alturaheader: 3.7em;
+}
+
 .container {
     padding: 0% 20%;
 }

@@ -17,112 +17,112 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="menutopoL">
+    <header className="header">
+        <nav className="navbar">
+            <div className="menutopoL">
 
             </div>
-            <div class="menutopoR">
-                <ul class="lista-header">
-                    <li><i class="fa-solid fa-lock icon"></i><a class="botao-header1" href="#">Acompanhe Aqui</a></li>
-                    <li><i class="fa-solid fa-circle-info icon"></i><a class="botao-header2" href="#">Acesso
+            <div className="menutopoR">
+                <ul className="lista-header">
+                    <li><i className="fa-solid fa-lock icon"></i><a className="botao-header1" href="#">Acompanhe Aqui</a></li>
+                    <li><i className="fa-solid fa-circle-info icon"></i><a className="botao-header2" href="#">Acesso
                             Restrito</a></li>
                 </ul>
             </div>
 
         </nav>
     </header>
-    <canvas class="linha-amarela">
+    <canvas className="linha-amarela">
 
     </canvas>
 
-    <main class="py-2 px-5">
-        <div class="card">
-            <div class="card-body p-2 m-2">
-                <canvas class="linha"></canvas>
-                <div class="form-etapas">
-                    <ul class="ul-etapas">
+    <main className="py-2 px-5">
+        <div className="card">
+            <div className="card-body p-2 m-2">
+                <canvas className="linha"></canvas>
+                <div className="form-etapas">
+                    <ul className="ul-etapas">
                         <li>
-                            <button class="btn btn-secondary">
+                            <button className="btn btn-secondary">
                                 Termos
                             </button>
                         </li>
                         <li>
-                            <button class="btn btn-secondary">
+                            <button className="btn btn-secondary">
                                 Validação
                             </button>
                         </li>
                         <li>
-                            <button class="btn btn-primary">
+                            <button className="btn btn-primary">
                                 Relato
                             </button>
                         </li>
                         <li>
-                            <button class="btn btn-secondary">
+                            <button className="btn btn-secondary">
                                 Confirmação
                             </button>
                         </li>
                     </ul>
                 </div>
-                <div class="form-conteudo">
+                <div className="form-conteudo">
                     <form id="formSinistro" action="" method="post" enctype="multipart/form-data">
-                        <h1 class="text-center">LOCAL DO SINISTRO</h1>
+                        <h1 className="text-center">LOCAL DO SINISTRO</h1>
 
-                        <div class="container text-center">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label for="cep" class="control-label">CEP</label>
-                                        <input class="form-control" name="cep" type="text" id="cep" required=""
+                        <div className="container text-center">
+                            <div className="row">
+                                <div className="col">
+                                    <div className="form-group ">
+                                        <label for="cep" className="control-label">CEP</label>
+                                        <input className="form-control" name="cep" type="text" id="cep" required=""
                                             value="">
 
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label for="logradouro" class="control-label">Logradouro</label>
+                                <div className="col">
+                                    <div className="form-group ">
+                                        <label for="logradouro" className="control-label">Logradouro</label>
 
-                                        <input class="form-control" name="logradouro" type="text" required=""
+                                        <input className="form-control" name="logradouro" type="text" required=""
                                             id="logradouro" value="">
 
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label for="bairro" class="control-label">Bairro</label>
-                                        <input class="form-control" id="bairro" name="bairro" required="">
+                                <div className="col">
+                                    <div className="form-group ">
+                                        <label for="bairro" className="control-label">Bairro</label>
+                                        <input className="form-control" id="bairro" name="bairro" required="">
 
 
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label for="complemento" class="control-label">Complemento</label>
-                                        <input class="form-control" name="complemento" type="text" id="complemento"
+                                <div className="col">
+                                    <div className="form-group ">
+                                        <label for="complemento" className="control-label">Complemento</label>
+                                        <input className="form-control" name="complemento" type="text" id="complemento"
                                             value="">
 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <canvas class="linha mt-2 p-2 "></canvas>
-                        <div class="row">
-                            <div class="col-md-4">
+                        <canvas className="linha mt-2 p-2 "></canvas>
+                        <div className="row">
+                            <div className="col-md-4">
                                 <label><b>Data do Sinistro*</b> </label>
-                                <input type="date" class="form-control">
+                                <input type="date" className="form-control">
                             </div>
-                            <div class="col-md-8">
+                            <div className="col-md-8">
                                 <label><b>Ponto de referência</b></label>
-                                <input type="text" class="form-control">
+                                <input type="text" className="form-control">
                             </div>
                         </div>
-                        <canvas class="linha mt-2 p-2 "></canvas>
-                        <div class="row">
+                        <canvas className="linha mt-2 p-2 "></canvas>
+                        <div className="row">
                             <h3>CIRCUNSTÂNCIAS DO SINISTRO</h3>
                             <h6>Descreva a ocorrência</h6>
-                            <div class="col-md-6">
+                            <div className="col-md-6">
                                 <label><b>Sentido da Via*</b> </label>
-                                <select name="sentidosinistro" class="form-select">
+                                <select name="sentidosinistro" className="form-select">
 
                                     <option selected>Selecione</option>
                                     <option>Cidade</option>
@@ -132,7 +132,7 @@
                                 </select>
                                 <br>
                                 <label><b>Sinalização da Via*</b> </label>
-                                <select name ="sinalizacaosinistro" class="form-select">
+                                <select name ="sinalizacaosinistro" className="form-select">
                                     <option selected>Selecione</option>
                                     <option>Estava em perfeito estado</option>
                                     <option>Estava ilegível</option>
@@ -141,7 +141,7 @@
                                 </select>
                                 <br>
                                 <label><b>Condição da Via*</b> </label>
-                                <select name="condicaosinistro" class="form-select">
+                                <select name="condicaosinistro" className="form-select">
                                     <option selected>Selecione</option>
                                     <option>Alagada</option>
                                     <option>Arenosa</option>
@@ -151,7 +151,7 @@
                                 </select>
                                 <br>
                                 <label><b>Natureza do Sinistro*</b> </label>
-                                <select class="form-select" name="naturezasinistro">
+                                <select className="form-select" name="naturezasinistro">
                                     <option selected>Selecione</option>
                                     <option>Atropelamento de animal</option>
                                     <option>Atropelamento de pedestre</option>
@@ -169,9 +169,9 @@
                                 </select>
                                 <br>
                             </div>
-                            <div class="col-md-6">
+                            <div className="col-md-6">
                                 <label><b>Local da Via*</b> </label>
-                                <select class="form-select" name="localsinistro">
+                                <select className="form-select" name="localsinistro">
                                     <option selected>Selecione</option>
                                     <option>Ao logo da via</option>
                                     <option>Em um cruzamento</option>
@@ -184,7 +184,7 @@
                                 </select>
                                 <br>
                                 <label><b>Tempo/Clima*</b> </label>
-                                <select class="form-select" name="temposinistro">
+                                <select className="form-select" name="temposinistro">
                                     <option selected>Selecione</option>
                                     <option>Chovia na hora do acidente</option>
                                     <option>Esta bom</option>
@@ -192,7 +192,7 @@
                                 </select>
                                 <br>
                                 <label><b>Semáforo*</b> </label>
-                                <select class="form-select" name="semaforosinistro">
+                                <select className="form-select" name="semaforosinistro">
                                     <option selected>Selecione</option>
                                     <option>Estava com defeito</option>
                                     <option>Estava desligado</option>
@@ -202,7 +202,7 @@
                                 </select>
                                 <br>
                                 <label><b>Conservação da Via*</b> </label>
-                                <select class="form-select" name="conservacaosinistro">
+                                <select className="form-select" name="conservacaosinistro">
                                     <option selected>Selecione</option>
                                     <option>Em obras</option>
                                     <option>Mal Conservada</option>
@@ -212,20 +212,20 @@
                                 <br>
                             </div>
                         </div>
-                        <canvas class="linha mt-2 p-2 "></canvas>
-                        <div class="row">
-                            <h3><i class="fa fa-person"></i> ENVOLVIDOS</h3>
+                        <canvas className="linha mt-2 p-2 "></canvas>
+                        <div className="row">
+                            <h3><i className="fa fa-person"></i> ENVOLVIDOS</h3>
                             <h6>Condutores envolvidos na ocorrência.</h6>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            <div className="col-md-2">
+                                <button type="button" className="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#exampleModalEnv">
                                     Adicionar Pessoa
                                 </button>
 
                             </div>
                             <br>
-                            <div class="col-md-12">
-                                <table class="table mt-2">
+                            <div className="col-md-12">
+                                <table className="table mt-2">
                                     <thead>
                                         <tr>
                                             <th>Nome</th>
@@ -242,23 +242,23 @@
                             </div>
 
                         </div>
-                        <canvas class="linha mt-2 p-2 "></canvas>
-                        <div class="row">
-                            <h3><i class="fa fa-car"></i> VEÍCULOS ENVOLVIDOS</h3>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <canvas className="linha mt-2 p-2 "></canvas>
+                        <div className="row">
+                            <h3><i className="fa fa-car"></i> VEÍCULOS ENVOLVIDOS</h3>
+                            <div className="col-md-2">
+                                <button type="button" className="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#exampleModalVe">
                                     Adicionar Veículo
                                 </button>
                             </div>
-                            <div class="col-md-8">
+                            <div className="col-md-8">
                                 <span>Cada veículo deve estar vinculado a uma pessoa. Mas, caso tenha-se evadido ou não
                                     tenha os dados do proprietário, você pode cadastrar separademente clicando em <b>
                                         Adicionar Veículo.</b></span>
 
                             </div>
-                            <div class="col-md-12">
-                                <table class="table mt-2">
+                            <div className="col-md-12">
+                                <table className="table mt-2">
                                     <thead>
                                         <tr>
                                             <th>Placa</th>
@@ -273,16 +273,16 @@
                                 </table>
                             </div>
                         </div>
-                        <canvas class="linha mt-2 p-2 "></canvas>
-                        <div class="row">
-                            <h3><i class="fa fa-file"></i> ANEXOS</h3>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <canvas className="linha mt-2 p-2 "></canvas>
+                        <div className="row">
+                            <h3><i className="fa fa-file"></i> ANEXOS</h3>
+                            <div className="col-md-2">
+                                <button type="button" className="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#exampleModalAne">
                                     Adicionar Anexo
                                 </button>
                             </div>
-                            <div class="col-md-8">
+                            <div className="col-md-8">
                                 <span>
 
                                     É necessário anexar a<b> CNH</b> do condutor e o<b> CRLV </b>do veículo.
@@ -290,8 +290,8 @@
                                     Só é permitido 4 imagens por veículo.</b></span>
 
                             </div>
-                            <div class="col-md-12">
-                                <table class="table mt-2">
+                            <div className="col-md-12">
+                                <table className="table mt-2">
                                     <thead>
                                         <tr>
                                             <th>Tipo</th>
@@ -307,12 +307,12 @@
                         </div>
 
                         <br>
-                        <button class="btn btn-success mt-2 " onclick="location.href = 'formulario-2.html'">
-                            <i class="bi bi-arrow-left"></i>
+                        <button className="btn btn-success mt-2 " onclick="location.href = 'formulario-2.html'">
+                            <i className="bi bi-arrow-left"></i>
                             <span>Anterior</span>
                         </button>
-                        <button class="btn btn-primary mt-2 " type="submit">
-                            <i class="bi bi-arrow-right"></i>
+                        <button className="btn btn-primary mt-2 " type="submit">
+                            <i className="bi bi-arrow-right"></i>
                             <span>Próximo</span>
                         </button>
                     </form>
@@ -327,9 +327,9 @@
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="js/cep.js"></script>
     <footer>
-        <ul class="ulfooter">
-            <li class=""><img src="imagens/footer.png" alt="" width="10%"></li>
-            <li class=""><img src="imagens/logofooter.png" alt="" width="70%"></li>
+        <ul className="ulfooter">
+            <li className=""><img src="imagens/footer.png" alt="" width="10%"></li>
+            <li className=""><img src="imagens/logofooter.png" alt="" width="70%"></li>
         </ul>
     </footer>
 
@@ -338,19 +338,19 @@
     -->
 
     <!-- envolvidos-->
-    <div class="modal fade modal-lg" id="exampleModalEnv" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div className="modal fade modal-lg" id="exampleModalEnv" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div className="modal-dialog">
+            <div className="modal-content">
                 <form data-form-pessoa >
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Adicionar Pessoa</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLabel">Adicionar Pessoa</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <h4 class="mt-2">DADOS PESSOAIS</h4>
-                        <canvas class="linha"></canvas>
-                        <div class="alert alert-primary" role="alert">
+                    <div className="modal-body">
+                        <h4 className="mt-2">DADOS PESSOAIS</h4>
+                        <canvas className="linha"></canvas>
+                        <div className="alert alert-primary" role="alert">
                             <b>CONDUTOR:</b> A pessoa que estava dirigindo o
                             veículo no momento do acidente.<br>
 
@@ -369,68 +369,68 @@
                             acidente.<br>
 
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label class="mt-1">Quem?*</label>
-                                <select name="Tipo" id="Tipo" class="form-select">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <label className="mt-1">Quem?*</label>
+                                <select name="Tipo" id="Tipo" className="form-select">
                                     <option value="condutor(a)">condutor(a)</option>
                                     <option value="condutor(a) e proprietário(a)">condutor e proprietário</option>
                                     <option value="proprietário(a)">prprietário(a)</option>
                                     <option value="envolvida">pessoa envolvida</option>
                                     <option value="testemunha">testemunha</option>
                                 </select>
-                                <label class="mt-1">CPF/CNPJ*</label>
-                                <input class="form-control mt-2" type="text" name="cpf">
-                                <label class="mt-1">Nome*</label>
-                                <input class="form-control" type="text" name="nome">
-                                <label class="mt-1">Email*</label>
-                                <input class="form-control mt-2" type="text" name="email">
-                                <label class="mt-1">Confirmar Email</label>
-                                <input class="form-control" type="text" name="confimar-email">
-                                <label class="mt-1">Sexo*</label>
-                                <input class="form-control mt-2" type="text" name="sexo">
-                                <label class="mt-1">Data de Nascimento*</label>
-                                <input class="form-control mt-2" type="text" name="nascimento">
+                                <label className="mt-1">CPF/CNPJ*</label>
+                                <input className="form-control mt-2" type="text" name="cpf">
+                                <label className="mt-1">Nome*</label>
+                                <input className="form-control" type="text" name="nome">
+                                <label className="mt-1">Email*</label>
+                                <input className="form-control mt-2" type="text" name="email">
+                                <label className="mt-1">Confirmar Email</label>
+                                <input className="form-control" type="text" name="confimar-email">
+                                <label className="mt-1">Sexo*</label>
+                                <input className="form-control mt-2" type="text" name="sexo">
+                                <label className="mt-1">Data de Nascimento*</label>
+                                <input className="form-control mt-2" type="text" name="nascimento">
                             </div>
-                            <div class="col-md-6">
-                                <label class="mt-1">CEP</label>
-                                <input class="form-control mt-2" type="text" name="cep">
-                                <label class="mt-1">Logradouro</label>
-                                <input class="form-control mt-2" type="text" name="logradouro">
-                                <label class="mt-1">Número</label>
-                                <input class="form-control mt-2" type="text" name="numero">
-                                <label class="mt-1">Complemento</label>
-                                <input class="form-control mt-2" type="text" name="complemento">
-                                <label class="mt-1">Bairro</label>
-                                <input class="form-control mt-2" type="text" name="bairro">
-                                <label class="mt-1">Estado</label>
-                                <select class="form-select estado" id="estadoPessoa" name="estado">
+                            <div className="col-md-6">
+                                <label className="mt-1">CEP</label>
+                                <input className="form-control mt-2" type="text" name="cep">
+                                <label className="mt-1">Logradouro</label>
+                                <input className="form-control mt-2" type="text" name="logradouro">
+                                <label className="mt-1">Número</label>
+                                <input className="form-control mt-2" type="text" name="numero">
+                                <label className="mt-1">Complemento</label>
+                                <input className="form-control mt-2" type="text" name="complemento">
+                                <label className="mt-1">Bairro</label>
+                                <input className="form-control mt-2" type="text" name="bairro">
+                                <label className="mt-1">Estado</label>
+                                <select className="form-select estado" id="estadoPessoa" name="estado">
                                     <option>Selecione um estado</option>
                                 </select>
-                                <label class="mt-1">Cidade</label>
-                                <select class="form-select municipio" id="municipioPessoa" name="cidade">
+                                <label className="mt-1">Cidade</label>
+                                <select className="form-select municipio" id="municipioPessoa" name="cidade">
                                     <option>Selecione um Município</option>
                                 </select>
                             </div>
                         </div>
-                        <h4 class="mt-2">DESCREVA O SINISTRO</h4>
-                        <canvas class="linha"></canvas>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <textarea cols="10" rows="10" maxlength="32700" class="form-control"
+                        <h4 className="mt-2">DESCREVA O SINISTRO</h4>
+                        <canvas className="linha"></canvas>
+                        <div className="row">
+                            <div className="col-md-12">
+                                <textarea cols="10" rows="10" maxlength="32700" className="form-control"
                                     id="descreveSinistro" name="sinistro"></textarea>
-                                <b class="text-danger"><span id="caracteresSinistro">32700</span> characters restantes.</b>
+                                <b className="text-danger"><span id="caracteresSinistro">32700</span> characters restantes.</b>
                             </div>
                         </div>
 
-                        <h4 class="mt-2">CARTEIRA DE HABILITAÇÃO</h4>
-                        <canvas class="linha"></canvas>
-                        <div class="row">
-                            <div class="col-md-6">
+                        <h4 className="mt-2">CARTEIRA DE HABILITAÇÃO</h4>
+                        <canvas className="linha"></canvas>
+                        <div className="row">
+                            <div className="col-md-6">
                                 <label>Número</label>
-                                <input class="form-control mt-2" type="text" name="habilitacaoNumero">
+                                <input className="form-control mt-2" type="text" name="habilitacaoNumero">
                                 <label>Categoria</label>
-                                <select class="form-select mt-2" type="text" name="habilitacaoCategoria">
+                                <select className="form-select mt-2" type="text" name="habilitacaoCategoria">
                                     <option selected>Selecione</option>
                                     <option>A</option>
                                     <option>B</option>
@@ -444,20 +444,20 @@
                                 </select>
 
                             </div>
-                            <div class="col-md-6">
+                            <div className="col-md-6">
                                 <label>Validade</label>
-                                <input class="form-control mt-2" type="date" name="habilitacaoValidade">
+                                <input className="form-control mt-2" type="date" name="habilitacaoValidade">
                                 <label>Estado</label>
-                                <select class="form-select mt-2 estado" type="text" name="habilitacaoEstado">
+                                <select className="form-select mt-2 estado" type="text" name="habilitacaoEstado">
                                     <option>Selecione um estado</option>
                                 </select>
                             </div>
 
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-link" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-link" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" className="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#exampleModalAne" data-adiciona-pessoa>
                             Adicionar
                         </button>
@@ -470,55 +470,55 @@
     <!--fim do moldal envo.-->
 
     <!-- veículos-->
-    <div class="modal fade modal-lg" id="exampleModalVe" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div className="modal fade modal-lg" id="exampleModalVe" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Adicionar Veículos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div className="modal-dialog">
+            <div className="modal-content">
+                <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">Adicionar Veículos</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form data-form-veiculo>
-                    <div class="modal-body">
-                        <h4 class="mt-2">INFORMAÇÕES DO VEÍCULO</h4>
-                        <canvas class="linha"></canvas>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label class="mt-2">Tipo do Veículo*</label>
-                                <input class="form-control mt-2" type="text" name="veiculoTipo">
-                                <label class="mt-2">Placa</label>
-                                <input class="form-control mt-2" type="text" name="veiculoPlaca">
-                                <label class="mt-2">Renavam</label>
-                                <input class="form-control mt-2" type="text" name="veiculoRenavam">
-                                <label class="mt-2">Cor</label>
-                                <input class="form-control mt-2" type="text" name="veiculoCor">
-                                <label class="mt-2">Marca</label>
-                                <input class="form-control mt-2" type="text" name="veiculoMarca">
+                    <div className="modal-body">
+                        <h4 className="mt-2">INFORMAÇÕES DO VEÍCULO</h4>
+                        <canvas className="linha"></canvas>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <label className="mt-2">Tipo do Veículo*</label>
+                                <input className="form-control mt-2" type="text" name="veiculoTipo">
+                                <label className="mt-2">Placa</label>
+                                <input className="form-control mt-2" type="text" name="veiculoPlaca">
+                                <label className="mt-2">Renavam</label>
+                                <input className="form-control mt-2" type="text" name="veiculoRenavam">
+                                <label className="mt-2">Cor</label>
+                                <input className="form-control mt-2" type="text" name="veiculoCor">
+                                <label className="mt-2">Marca</label>
+                                <input className="form-control mt-2" type="text" name="veiculoMarca">
                             </div>
-                            <div class="col-md-6">
-                                <label class="mt-2">Modelo</label>
-                                <input class="form-control mt-2" type="text" name="veiculoModelo">
-                                <label class="mt-2">Chassi</label>
-                                <input class="form-control mt-2" type="text" name="veiculoChassi">
-                                <label class="mt-2">Estado</label>
-                                <select class="form-select estado" id="estado" name="veiculoEstado">
+                            <div className="col-md-6">
+                                <label className="mt-2">Modelo</label>
+                                <input className="form-control mt-2" type="text" name="veiculoModelo">
+                                <label className="mt-2">Chassi</label>
+                                <input className="form-control mt-2" type="text" name="veiculoChassi">
+                                <label className="mt-2">Estado</label>
+                                <select className="form-select estado" id="estado" name="veiculoEstado">
                                     <option>Selecione um estado</option>
                                 </select>
-                                <label class="mt-2">Município</label>
-                                <select class="form-select municipio" id="municipio" name="veiculoMunicipio">
+                                <label className="mt-2">Município</label>
+                                <select className="form-select municipio" id="municipio" name="veiculoMunicipio">
                                     <option>Selecione um município</option>
                                 </select>
                             </div>
-                            <div class="row">
-                                <h4 class="mt-2">DECLARAÇÃO DAS AVARIAS</h4>
-                                <canvas class="linha"></canvas>
-                                <div class="col-md-11">
-                                    <textarea cols="10" rows="10" maxlength="32700" class="form-control"
+                            <div className="row">
+                                <h4 className="mt-2">DECLARAÇÃO DAS AVARIAS</h4>
+                                <canvas className="linha"></canvas>
+                                <div className="col-md-11">
+                                    <textarea cols="10" rows="10" maxlength="32700" className="form-control"
                                     id="declaracaoAvaria"></textarea>
-                                    <b class="text-danger"><span id="caracteresAvaria">32700</span> characters
+                                    <b className="text-danger"><span id="caracteresAvaria">32700</span> characters
                                         restantes.</b>
                                 </div>
-                                <div class="col-md-12 mt-1 p-1 px-1">
+                                <div className="col-md-12 mt-1 p-1 px-1">
                                     <input type="checkbox" id="correu"><span><label form="correu"> &nbsp;Veículo evadiu-se
                                             do local.</label></span>
                                 </div>
@@ -527,9 +527,9 @@
                         </div>
 
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" className="btn btn-primary">
                             Adicionar
                         </button>
                     </div>
@@ -539,33 +539,33 @@
     </div>
     <!-- fim veículos-->
     <!-- anexo-->
-    <div class="modal fade" id="exampleModalAne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Adicionar Anexo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div className="modal fade" id="exampleModalAne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+            <div className="modal-content">
+                <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">Adicionar Anexo</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="" data-form-anexo>
-                    <div class="modal-body">
-                        <h4 class="mt-2">ANEXO</h4>
-                        <canvas class="linha"></canvas>
+                    <div className="modal-body">
+                        <h4 className="mt-2">ANEXO</h4>
+                        <canvas className="linha"></canvas>
                         <label>TIPO DE ANEXO*</label>
-                        <select class="form-select" name="anexoTipo">
+                        <select className="form-select" name="anexoTipo">
                             <option selected>Selecione</option>
                             <option value="cnh">CNH - Carteira Nacional de Habilitação</option>
                             <option value="crlv">CRLV - Certificado de Registro e Licenciamento de Veículo</option>
                             <option value="foto">Fotos do Acidente </option>
                         </select>
-                        <div class="file-input-wrapper mt-2">
-                            <button class="btn btn-primary "><i class="fa fa-plus"></i> Selecione Anexos</button>
+                        <div className="file-input-wrapper mt-2">
+                            <button className="btn btn-primary "><i className="fa fa-plus"></i> Selecione Anexos</button>
                             <input type="file" name="anexoArquivo" id="anexoArquivo" value="" />
                         </div>
                         <span id="anexoNome"></span>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Adicionar anexo</button>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" className="btn btn-primary">Adicionar anexo</button>
                     </div>
                 </form>
             </div>

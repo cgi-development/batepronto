@@ -1,10 +1,15 @@
-import banner from "../../../public/imagens/capa-bate.jpg";
-
 const Banner = () => {
     return (
     <div>
-        <img />
-        <img src={banner} alt="imagem banner" width={150} />
+        <Container>
+            <Col>
+                <Row>
+
+                </Row>
+            </Col>
+        </Container>
+        <img src={"imagens/capa-bate.jpg"} alt="imagem banner" width={780}/>
+    
     </div>
     )
 }

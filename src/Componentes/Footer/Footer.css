@@ -1,3 +1,5 @@
+@import url("../../paginas/style.css");
+
 .ulfooter {
     display: flex;
     flex-direction: row;

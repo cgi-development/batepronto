@@ -1,3 +1,5 @@
+@import url(../../paginas/style.css);
+
 .linha-amarela {
     background-color: var(--fundoamarelo);
     width: 100%;

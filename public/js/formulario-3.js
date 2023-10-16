@@ -59,7 +59,7 @@ $(() => {
             <td>${dadosFormatados['cpf']}</td>
             <td>${dadosFormatados['habilitacaoNumero']}</td>
             <td>${dadosFormatados['habilitacaoCategoria']}</td>
-            <td><a onclick="$(this).parent().parent().remove()"><i class="fa fa-close text-danger"></i></a></td>
+            <td><a onclick="$(this).parent().parent().remove()"><i className="fa fa-close text-danger"></i></a></td>
             </tr>`);
     });
 
@@ -76,7 +76,7 @@ $(() => {
             <td>${dadosFormatados['veiculoPlaca']}</td>
             <td>${dadosFormatados['veiculoTipo']}</td>
             <td>${dadosFormatados['veiculoMarca']} ${dadosFormatados['veiculoModelo']}</td>
-            <td><a onclick="$(this).parent().parent().remove()"><i class="fa fa-close text-danger"></i></a></td>
+            <td><a onclick="$(this).parent().parent().remove()"><i className="fa fa-close text-danger"></i></a></td>
             </tr>`);
     });
 
@@ -101,7 +101,7 @@ $(() => {
         $("#anexos").append(`<tr>
             <td>${dadosFormatados['anexoTipo']}</td>
             <td>${dadosFormatados['anexoArquivo']}</td>
-            <td><a onclick="$(this).parent().parent().remove()"><i class="fa fa-close text-danger"></i></a></td>
+            <td><a onclick="$(this).parent().parent().remove()"><i className="fa fa-close text-danger"></i></a></td>
             </tr>`);
     });
 

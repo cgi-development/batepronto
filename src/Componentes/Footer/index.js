@@ -1,17 +1,18 @@
-import footer from "./../../../public/imagens/footer.png";
-import logoimagens from "./../../../public/imagens/logoimagens/footer.png";
+import "./Footer.css";
 
 const Footer = () => {
     return (
     <footer>
         <ul className="ulfooter">
-            <li class="">
-                <img src={footer} alt=""  width="10%" />
+            <li className="">
+                <img src="imagens/footer.png" alt=""  width="10%" />
             </li>
-            <li class="">
-                <img src={logoimagens} alt=""  width="70%" />
+            <li className="">
+                <img src="imagens/logoimagens/footer.png" alt=""  width="70%" />
             </li>
         </ul>
     </footer>
     )
 }
+
+export default Footer;

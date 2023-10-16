@@ -1,4 +1,4 @@
-import "LinhaAmarela.css";
+import "./LinhaAmarela.css";
 
 const LinhaAmarela = () => {
     return (
