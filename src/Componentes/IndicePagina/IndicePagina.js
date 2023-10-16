@@ -6,14 +6,16 @@ const IndicePagina = () => {
         <Card>
             <Card.Body>
                 <div className="form-etapas">
-                    <Stack gap={3}>
+                    <Stack direction="horizontal" gap={2}>
                     <div className="p-2"><Button variant="primary">Termos</Button></div>
                     <div className="p-2"><Button variant="secondary">Validação</Button></div>
                     <div className="p-2"><Button variant="secondary">Relato</Button></div>
-                    <div className="p-2"><Button variant="secondary">Relato</Button></div>
+                    <div className="p-2"><Button variant="secondary">Confirmação</Button></div>
                     </Stack>
                 </div>
             </Card.Body>
         </Card>
     )
 }
+
+export default IndicePagina;
