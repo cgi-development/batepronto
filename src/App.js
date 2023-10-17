@@ -1,10 +1,10 @@
-import { RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Footer from "./Componentes/Footer";
 import Header from "./Componentes/Header";
 import LinhaAmarela from "./Componentes/LinhaAmarela";
 import Welcome from "./paginas/Welcome";
-import Formu1 from "./paginas/Form1";
+import Form1 from "./paginas/Form1";
 
 function App() {
   const rotas = createBrowserRouter([
