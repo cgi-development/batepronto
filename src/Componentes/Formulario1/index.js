@@ -1,4 +1,5 @@
-import { Form } from "react-bootstrap"
+import { Button, Form } from "react-bootstrap"
+import { useNavigate } from "react-router-dom";
 
 const Formulario1 = () => {
     const navegar = useNavigate();

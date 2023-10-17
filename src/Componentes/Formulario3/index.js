@@ -1,8 +1,7 @@
 import { Col, Row } from "react-bootstrap";
 import { Form } from "react-bootstrap/lib/Navbar";
 import { Container } from "react-bootstrap/lib/Tab";
-import LinhaAmarela from "../LinhaAmarela";
-import LinhaAzul from "../LinhaAzul";
+import LinhaAzul from "./../LinhaAzul";
 
 const Formulario3 = () => {
     return (
@@ -153,15 +152,15 @@ const Formulario3 = () => {
             <Row className="row">
                 <h3><i className="fa fa-person"></i> ENVOLVIDOS</h3>
                 <h6>Condutores envolvidos na ocorrência.</h6>
-                <Cow className="col-md-2">
+                <Col className="col-md-2">
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModalEnv">
                         Adicionar Pessoa
                     </button>
 
-                </Cow>
+                </Col>
                 <br/>
-                    <Cow className="col-md-12">
+                    <Col className="col-md-12">
                         <table className="table mt-2">
                             <thead>
                                 <tr>
@@ -175,7 +174,7 @@ const Formulario3 = () => {
                             <tbody id="envolvidos">
                             </tbody>
                         </table>
-                    </Cow>
+                    </Col>
             </Row>
             <LinhaAzul className="linha mt-2 p-2 "/>
             <Row className="row">
