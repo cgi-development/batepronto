@@ -1,11 +1,11 @@
-import FormConteudo from "../Componentes/FormConteudo/FormConteudo"
+import Formulario1 from "../Componentes/Formulario1"
 import IndicePagina from "../Componentes/IndicePagina/IndicePagina"
 
 const Form1 = () => {
     return (
         <>
         <IndicePagina/>
-        <FormConteudo/>
+        <Formulario1/>
         </>
     )
 }
