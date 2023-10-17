@@ -1,0 +1,7 @@
+@import url(../../paginas/style.css);
+.linha-azul {
+    background-color: var(--fundoazul);
+    width: 100%;
+    height: 1em;
+    margin-bottom: 10px;
+}

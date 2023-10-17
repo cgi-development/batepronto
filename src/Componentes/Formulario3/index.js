@@ -1,58 +1,64 @@
+import { Col, Row } from "react-bootstrap";
+import { Form } from "react-bootstrap/lib/Navbar";
+import { Container } from "react-bootstrap/lib/Tab";
+import LinhaAmarela from "../LinhaAmarela";
+import LinhaAzul from "../LinhaAzul";
+
 const Formulario3 = () => {
     return (
-    <div className="form-conteudo">
-        <form id="formSinistro" action="" method="post" enctype="multipart/form-data">
+    <Form className="form-conteudo">
+        <Form id="formSinistro" action="" method="post" enctype="multipart/form-data">
             <h1 className="text-center">LOCAL DO SINISTRO</h1>
 
-            <div className="container text-center">
-                <div className="row">
-                    <div className="col">
-                        <div className="form-group ">
-                            <label htmlFor="cep" className="control-label">CEP</label>
-                            <input className="form-control" name="cep" type="text" id="cep" required=""
+            <Container className="container text-center">
+                <Row className="row">
+                    <Col className="col">
+                        <Form.Group>
+                            <Form.Label htmlFor="cep" className="control-label">CEP</Form.Label>
+                            <Form.Control name="cep" type="text" id="cep" required=""
                                 value=""/>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="form-group ">
-                            <label htmlFor="logradouro" className="control-label">Logradouro</label>
+                        </Form.Group>
+                    </Col>
+                    <Col className="col">
+                        <Form.Group>
+                            <Form.Label htmlFor="logradouro" className="control-label">Logradouro</Form.Label>
 
-                            <input className="form-control" name="logradouro" type="text" required=""
+                            <Form.input name="logradouro" type="text" required=""
                                 id="logradouro" value=""/>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="form-group ">
-                            <label htmlFor="bairro" className="control-label">Bairro</label>
-                            <input className="form-control" id="bairro" name="bairro" required=""/>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="form-group ">
-                            <label htmlFor="complemento" className="control-label">Complemento</label>
-                            <input className="form-control" name="complemento" type="text" id="complemento"
+                        </Form.Group>
+                    </Col>
+                    <Col className="col">
+                        <Form.Group>
+                            <Form.Label htmlFor="bairro" className="control-label">Bairro</Form.Label>
+                            <Form.Control id="bairro" name="bairro" required=""/>
+                        </Form.Group>
+                    </Col>
+                    <Col className="col">
+                        <Form.Group>
+                            <Form.Label htmlFor="complemento" className="control-label">Complemento</Form.Label>
+                            <Form.Control name="complemento" type="text" id="complemento"
                                 value=""/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <canvas className="linha mt-2 p-2 "></canvas>
-            <div className="row">
-                <div className="col-md-4">
-                    <label><b>Data do Sinistro*</b> </label>
-                    <input type="date" className="form-control"/>
-                </div>
-                <div className="col-md-8">
-                    <label><b>Ponto de referência</b></label>
-                    <input type="text" className="form-control"/>
-                </div>
-            </div>
-            <canvas className="linha mt-2 p-2 "></canvas>
-            <div className="row">
+                        </Form.Group>
+                    </Col>
+                </Row>
+            </Container>
+            <LinhaAzul className="linha mt-2 p-2 "/>
+            <Row className="row">
+                <Col className="col-md-4">
+                    <Form.Label><b>Data do Sinistro*</b> </Form.Label>
+                    <Form.Control type="date"/>
+                </Col>
+                <Col className="col-md-8">
+                    <Form.Label><b>Ponto de referência</b></Form.Label>
+                    <Form.Control type="text"/>
+                </Col>
+            </Row>
+            <LinhaAzul className="linha mt-2 p-2 " />
+            <Row className="row">
                 <h3>CIRCUNSTÂNCIAS DO SINISTRO</h3>
                 <h6>Descreva a ocorrência</h6>
-                <div className="col-md-6">
-                    <label><b>Sentido da Via*</b> </label>
+                <Col className="col-md-6">
+                    <Form.Label><b>Sentido da Via*</b> </Form.Label>
                     <select name="sentidosinistro" className="form-select">
 
                         <option selected>Selecione</option>
@@ -62,7 +68,7 @@ const Formulario3 = () => {
 
                     </select>
                     <br/>
-                    <label><b>Sinalização da Via*</b> </label>
+                    <Form.Label><b>Sinalização da Via*</b> </Form.Label>
                     <select name="sinalizacaosinistro" className="form-select">
                         <option selected>Selecione</option>
                         <option>Estava em perfeito estado</option>
@@ -71,7 +77,7 @@ const Formulario3 = () => {
                         <option>Não existe sinalização</option>
                     </select>
                     <br/>
-                    <label><b>Condição da Via*</b> </label>
+                    <Form.Label><b>Condição da Via*</b> </Form.Label>
                     <select name="condicaosinistro" className="form-select">
                         <option selected>Selecione</option>
                         <option>Alagada</option>
@@ -81,7 +87,7 @@ const Formulario3 = () => {
                         <option>Seca</option>
                     </select>
                     <br/>
-                    <label><b>Natureza do Sinistro*</b> </label>
+                    <Form.Label><b>Natureza do Sinistro*</b> </Form.Label>
                     <select className="form-select" name="naturezasinistro">
                         <option selected>Selecione</option>
                         <option>Atropelamento de animal</option>
@@ -99,9 +105,9 @@ const Formulario3 = () => {
                         <option>Tombamento</option>
                     </select>
                     <br/>
-                </div>
-                <div className="col-md-6">
-                    <label><b>Local da Via*</b> </label>
+                </Col>
+                <Col className="col-md-6">
+                    <Form.Label><b>Local da Via*</b> </Form.Label>
                     <select className="form-select" name="localsinistro">
                         <option selected>Selecione</option>
                         <option>Ao logo da via</option>
@@ -114,7 +120,7 @@ const Formulario3 = () => {
                         <option>Sobre uma ponte</option>
                     </select>
                     <br/>
-                    <label><b>Tempo/Clima*</b> </label>
+                    <Form.Label><b>Tempo/Clima*</b> </Form.Label>
                     <select className="form-select" name="temposinistro">
                         <option selected>Selecione</option>
                         <option>Chovia na hora do acidente</option>
@@ -122,7 +128,7 @@ const Formulario3 = () => {
                         <option>Estava nublado</option>
                     </select>
                     <br/>
-                    <label><b>Semáforo*</b> </label>
+                    <Form.Label><b>Semáforo*</b> </Form.Label>
                     <select className="form-select" name="semaforosinistro">
                         <option selected>Selecione</option>
                         <option>Estava com defeito</option>
@@ -132,7 +138,7 @@ const Formulario3 = () => {
                         <option>Não existia no local</option>
                     </select>
                     <br/>
-                    <label><b>Conservação da Via*</b> </label>
+                    <Form.Label><b>Conservação da Via*</b> </Form.Label>
                     <select className="form-select" name="conservacaosinistro">
                         <option selected>Selecione</option>
                         <option>Em obras</option>
@@ -141,21 +147,21 @@ const Formulario3 = () => {
                         <option>Perfeito estado</option>
                     </select>
                     <br/>
-                </div>
-            </div>
-            <canvas className="linha mt-2 p-2 "></canvas>
-            <div className="row">
+                </Col>
+            </Row>
+            <LinhaAzul className="linha mt-2 p-2 "/>
+            <Row className="row">
                 <h3><i className="fa fa-person"></i> ENVOLVIDOS</h3>
                 <h6>Condutores envolvidos na ocorrência.</h6>
-                <div className="col-md-2">
+                <Cow className="col-md-2">
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModalEnv">
                         Adicionar Pessoa
                     </button>
 
-                </div>
+                </Cow>
                 <br/>
-                    <div className="col-md-12">
+                    <Cow className="col-md-12">
                         <table className="table mt-2">
                             <thead>
                                 <tr>
@@ -169,24 +175,24 @@ const Formulario3 = () => {
                             <tbody id="envolvidos">
                             </tbody>
                         </table>
-                    </div>
-            </div>
-            <canvas className="linha mt-2 p-2 "></canvas>
-            <div className="row">
+                    </Cow>
+            </Row>
+            <LinhaAzul className="linha mt-2 p-2 "/>
+            <Row className="row">
                 <h3><i className="fa fa-car"></i> VEÍCULOS ENVOLVIDOS</h3>
-                <div className="col-md-2">
+                <Col className="col-md-2">
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModalVe">
                         Adicionar Veículo
                     </button>
-                </div>
-                <div className="col-md-8">
+                </Col>
+                <Col className="col-md-8">
                     <span>Cada veículo deve estar vinculado a uma pessoa. Mas, caso tenha-se evadido ou não
                         tenha os dados do proprietário, você pode cadastrar separademente clicando em <b>
                             Adicionar Veículo.</b></span>
 
-                </div>
-                <div className="col-md-12">
+                </Col>
+                <Col className="col-md-12">
                     <table className="table mt-2">
                         <thead>
                             <tr>
@@ -199,25 +205,25 @@ const Formulario3 = () => {
                         <tbody id="veiculos">
                         </tbody>
                     </table>
-                </div>
-            </div>
-            <canvas className="linha mt-2 p-2 "></canvas>
-            <div className="row">
+                </Col>
+            </Row>
+            <LinhaAzul className="linha mt-2 p-2 "/>
+            <Row className="row">
                 <h3><i className="fa fa-file"></i> ANEXOS</h3>
-                <div className="col-md-2">
+                <Col className="col-md-2">
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModalAne">
                         Adicionar Anexo
                     </button>
-                </div>
-                <div className="col-md-8">
+                </Col>
+                <Col className="col-md-8">
                     <span>
                         É necessário anexar a<b> CNH</b> do condutor e o<b> CRLV </b>do veículo.
                         <b>Só é permitido 4 imagens por veículo.</b>
                     </span>
-                </div>
-            </div>
-            <div className="col-md-12">
+                </Col>
+            </Row>
+            <Col className="col-md-12">
                 <table className="table mt-2">
                     <thead>
                         <tr>
@@ -229,7 +235,7 @@ const Formulario3 = () => {
                     <tbody id="anexos">
                     </tbody>
                 </table>
-            </div>
+            </Col>
             <br/>
             <button className="btn btn-success mt-2 " onclick="location.href = 'formulario-2.html'">
                 <i className="bi bi-arrow-left"></i>
@@ -239,8 +245,8 @@ const Formulario3 = () => {
                 <i className="bi bi-arrow-right"></i>
                 <span>Próximo</span>
             </button>
-        </form>
-    </div>
+        </Form>
+    </Form>
     )
 }
 
