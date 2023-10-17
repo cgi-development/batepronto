@@ -1,4 +1,6 @@
-import { Col, Row, Form, Container } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
+import { Form } from "react-bootstrap/lib/Navbar";
+import { Container } from "react-bootstrap/lib/Tab";
 import LinhaAzul from "./../LinhaAzul";
 
 const Formulario3 = () => {
@@ -9,28 +11,28 @@ const Formulario3 = () => {
 
             <Container className="container text-center">
                 <Row className="row">
-                    <Col >
+                    <Col className="col">
                         <Form.Group>
                             <Form.Label htmlFor="cep" className="control-label">CEP</Form.Label>
                             <Form.Control name="cep" type="text" id="cep" required=""
                                 value=""/>
                         </Form.Group>
                     </Col>
-                    <Col >
+                    <Col className="col">
                         <Form.Group>
                             <Form.Label htmlFor="logradouro" className="control-label">Logradouro</Form.Label>
 
-                            <Form.Control name="logradouro" type="text" required=""
+                            <Form.input name="logradouro" type="text" required=""
                                 id="logradouro" value=""/>
                         </Form.Group>
                     </Col>
-                    <Col >
+                    <Col className="col">
                         <Form.Group>
                             <Form.Label htmlFor="bairro" className="control-label">Bairro</Form.Label>
                             <Form.Control id="bairro" name="bairro" required=""/>
                         </Form.Group>
                     </Col>
-                    <Col>
+                    <Col className="col">
                         <Form.Group>
                             <Form.Label htmlFor="complemento" className="control-label">Complemento</Form.Label>
                             <Form.Control name="complemento" type="text" id="complemento"
@@ -41,11 +43,11 @@ const Formulario3 = () => {
             </Container>
             <LinhaAzul className="linha mt-2 p-2 "/>
             <Row className="row">
-                <Col md={4}>
+                <Col className="col-md-4">
                     <Form.Label><b>Data do Sinistro*</b> </Form.Label>
                     <Form.Control type="date"/>
                 </Col>
-                <Col md={8}>
+                <Col className="col-md-8">
                     <Form.Label><b>Ponto de referência</b></Form.Label>
                     <Form.Control type="text"/>
                 </Col>
@@ -54,7 +56,7 @@ const Formulario3 = () => {
             <Row className="row">
                 <h3>CIRCUNSTÂNCIAS DO SINISTRO</h3>
                 <h6>Descreva a ocorrência</h6>
-                <Col md={6}>
+                <Col className="col-md-6">
                     <Form.Label><b>Sentido da Via*</b> </Form.Label>
                     <select name="sentidosinistro" className="form-select">
 
@@ -103,7 +105,7 @@ const Formulario3 = () => {
                     </select>
                     <br/>
                 </Col>
-                <Col md={6}>
+                <Col className="col-md-6">
                     <Form.Label><b>Local da Via*</b> </Form.Label>
                     <select className="form-select" name="localsinistro">
                         <option selected>Selecione</option>
@@ -158,7 +160,7 @@ const Formulario3 = () => {
 
                 </Col>
                 <br/>
-                    <Col  md={12}>
+                    <Col className="col-md-12">
                         <table className="table mt-2">
                             <thead>
                                 <tr>
@@ -177,19 +179,19 @@ const Formulario3 = () => {
             <LinhaAzul className="linha mt-2 p-2 "/>
             <Row className="row">
                 <h3><i className="fa fa-car"></i> VEÍCULOS ENVOLVIDOS</h3>
-                <Col  md={2}>
+                <Col className="col-md-2">
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModalVe">
                         Adicionar Veículo
                     </button>
                 </Col>
-                <Col  md={8}>
+                <Col className="col-md-8">
                     <span>Cada veículo deve estar vinculado a uma pessoa. Mas, caso tenha-se evadido ou não
                         tenha os dados do proprietário, você pode cadastrar separademente clicando em <b>
                             Adicionar Veículo.</b></span>
 
                 </Col>
-                <Col  md={12}>
+                <Col className="col-md-12">
                     <table className="table mt-2">
                         <thead>
                             <tr>
@@ -207,20 +209,20 @@ const Formulario3 = () => {
             <LinhaAzul className="linha mt-2 p-2 "/>
             <Row className="row">
                 <h3><i className="fa fa-file"></i> ANEXOS</h3>
-                <Col md={2}>
+                <Col className="col-md-2">
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModalAne">
                         Adicionar Anexo
                     </button>
                 </Col>
-                <Col  md={8}>
+                <Col className="col-md-8">
                     <span>
                         É necessário anexar a<b> CNH</b> do condutor e o<b> CRLV </b>do veículo.
                         <b>Só é permitido 4 imagens por veículo.</b>
                     </span>
                 </Col>
             </Row>
-            <Col md={2}>
+            <Col className="col-md-12">
                 <table className="table mt-2">
                     <thead>
                         <tr>
