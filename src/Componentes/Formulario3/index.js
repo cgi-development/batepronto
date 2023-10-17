@@ -150,7 +150,7 @@ const Formulario3 = () => {
             <Row className="row">
                 <h3><i className="fa fa-person"></i> ENVOLVIDOS</h3>
                 <h6>Condutores envolvidos na ocorrência.</h6>
-                <Cow className="col-md-2">
+                <Col className="col-md-2">
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModalEnv">
                         Adicionar Pessoa
