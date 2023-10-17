@@ -1,6 +1,4 @@
-import { Col, Row } from "react-bootstrap";
-import { Form } from "react-bootstrap/lib/Navbar";
-import { Container } from "react-bootstrap/lib/Tab";
+import { Col, Row, Form, Container } from "react-bootstrap";
 import LinhaAzul from "./../LinhaAzul";
 
 const Formulario3 = () => {
@@ -22,7 +20,7 @@ const Formulario3 = () => {
                         <Form.Group>
                             <Form.Label htmlFor="logradouro" className="control-label">Logradouro</Form.Label>
 
-                            <Form.input name="logradouro" type="text" required=""
+                            <Form.Control name="logradouro" type="text" required=""
                                 id="logradouro" value=""/>
                         </Form.Group>
                     </Col>
