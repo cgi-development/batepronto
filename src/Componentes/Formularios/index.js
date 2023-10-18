@@ -144,6 +144,26 @@ const Formulario2 = () => {
 }
 
 const Formulario3 = () => {
+    const [cep, setCep] = useState("");
+    const [endereco, setEndereco] = useState({
+        cep: "",
+        logradouro: "",
+        complemento: "",
+        bairro: "",
+        localidade: "",
+        uf: "",
+    })
+
+    const handleCep = (evento) => {
+        setCep(evento.target.value);
+
+        if(cep.length > 7){
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(resposta => resposta.json())
+            .then(resposta => setEndereco(resposta))
+        }
+    }
+
     return (
         <Container fluid>
             <Form className="form-conteudo">
@@ -151,31 +171,31 @@ const Formulario3 = () => {
                     <h1 className="text-center">LOCAL DO SINISTRO</h1>
 
                     <Container fluid className="text-center">
-                        <Row className="row">
-                            <Col className="col">
+                        <Row>
+                            <Col>
                                 <Form.Group>
-                                    <Form.Label htmlFor="cep" className="control-label">CEP</Form.Label>
+                                    <Form.Label htmlFor="cep">CEP</Form.Label>
                                     <Form.Control name="cep" type="text" id="cep" required=""
-                                        value="" />
+                                        onInput={handleCep}/>
                                 </Form.Group>
                             </Col>
-                            <Col className="col">
+                            <Col>
                                 <Form.Group>
-                                    <Form.Label htmlFor="logradouro" className="control-label">Logradouro</Form.Label>
+                                    <Form.Label htmlFor="logradouro">Logradouro</Form.Label>
 
                                     <Form.Control name="logradouro" type="text" required=""
-                                        id="logradouro" value="" />
+                                        id="logradouro" value={endereco.logradouro} />
                                 </Form.Group>
                             </Col>
-                            <Col className="col">
+                            <Col>
                                 <Form.Group>
-                                    <Form.Label htmlFor="bairro" className="control-label">Bairro</Form.Label>
-                                    <Form.Control id="bairro" name="bairro" required="" />
+                                    <Form.Label htmlFor="bairro">Bairro</Form.Label>
+                                    <Form.Control id="bairro" name="bairro" required="" value={endereco.bairro}/>
                                 </Form.Group>
                             </Col>
-                            <Col className="col">
+                            <Col>
                                 <Form.Group>
-                                    <Form.Label htmlFor="complemento" className="control-label">Complemento</Form.Label>
+                                    <Form.Label htmlFor="complemento">Complemento</Form.Label>
                                     <Form.Control name="complemento" type="text" id="complemento"
                                         value="" />
                                 </Form.Group>
@@ -183,7 +203,7 @@ const Formulario3 = () => {
                         </Row>
                     </Container>
                     <LinhaAzul className="linha mt-2 p-2 " />
-                    <Row className="row">
+                    <Row>
                         <Col md={4}>
                             <Form.Label><b>Data do Sinistro*</b> </Form.Label>
                             <Form.Control type="date" />
@@ -194,7 +214,7 @@ const Formulario3 = () => {
                         </Col>
                     </Row>
                     <LinhaAzul className="linha mt-2 p-2 " />
-                    <Row className="row">
+                    <Row>
                         <h3>CIRCUNSTÂNCIAS DO SINISTRO</h3>
                         <h6>Descreva a ocorrência</h6>
                         <Col md={6}>
@@ -290,7 +310,7 @@ const Formulario3 = () => {
                         </Col>
                     </Row>
                     <LinhaAzul className="linha mt-2 p-2 " />
-                    <Row className="row">
+                    <Row>
                         <h3><i className="fa fa-person"></i> ENVOLVIDOS</h3>
                         <h6>Condutores envolvidos na ocorrência.</h6>
                         <Col md={2}>
@@ -318,7 +338,7 @@ const Formulario3 = () => {
                         </Col>
                     </Row>
                     <LinhaAzul className="linha mt-2 p-2 " />
-                    <Row className="row">
+                    <Row>
                         <h3><i className="fa fa-car"></i> VEÍCULOS ENVOLVIDOS</h3>
                         <Col md={2}>
                             <button type="button" className="btn btn-primary" data-bs-toggle="modal"
@@ -348,7 +368,7 @@ const Formulario3 = () => {
                         </Col>
                     </Row>
                     <LinhaAzul className="linha mt-2 p-2 " />
-                    <Row className="row">
+                    <Row>
                         <h3><i className="fa fa-file"></i> ANEXOS</h3>
                         <Col md={2}>
                             <button type="button" className="btn btn-primary" data-bs-toggle="modal"
@@ -401,7 +421,7 @@ const Formulario4 = () => {
                     <p>Obrigado Senhor(a) <span className="nome"></span>. Seu cadastro foi realizado com sucesso.</p>
                     <hr />
                     <p className="mb-0">
-                        <Row className="row">
+                        <Row>
                             <Col md={6}>
                                 <Form.Label className="mt-2"><b>Protocolo:</b> </Form.Label>
                                 <span className="protocolo"></span>
