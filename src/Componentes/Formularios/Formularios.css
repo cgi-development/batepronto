@@ -1,0 +1,80 @@
+.textolaembaixo {
+    border-left: 10px solid var(--fundoazul);
+    padding-left: 10px;
+}
+
+.ulfooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 4em;
+    list-style-type: none;
+}
+
+.ulfooter li {
+    padding: 0 0.8em;
+}
+
+.linha {
+    background-color: var(--fundoazul);
+    width: 100%;
+    height: 0.3em;
+    margin-bottom: 10px;
+}
+
+.ul-etapas {
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+    list-style-type: none;
+    padding: 3px ;
+}
+
+.ul-etapas li{
+    margin: 0 0.1em;
+}
+
+hr {
+    color: #286fb6 !important;
+}
+
+.file-input-wrapper {
+    height: 90px;
+    margin: 2px;
+    overflow: hidden;
+    position: relative;
+    width: 100px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.file-input-wrapper>input[type="file"] {
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-input-wrapper>.btn-file-input {
+    background-color: #494949;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    height: 34px;
+    margin: 0 0 0 -1px;
+    padding-left: 0;
+    width: 121px;
+    cursor: pointer;
+}
+
+.file-input-wrapper:hover>.btn-file-input {
+    background-color: #494949;
+}
+
+#img_text {
+    float: right;
+    margin-right: -80px;
+    margin-top: -14px;
+}

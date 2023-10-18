@@ -4,7 +4,8 @@ import Footer from "./Componentes/Footer";
 import Header from "./Componentes/Header";
 import LinhaAmarela from "./Componentes/LinhaAmarela";
 import Welcome from "./paginas/Welcome";
-import Form1 from "./paginas/Form1";
+import Forms from "./paginas/Forms";
+import ErrorPage from "./paginas/ErrorPage.js";
 
 function App() {
   const rotas = createBrowserRouter([
@@ -14,13 +15,9 @@ function App() {
       errorElement: <ErrorPage />,
     },
     {
-      path: "/form1",
-      element: <Form1 />,
-    },
-    {
-      path: "/form2",
-      element: <Form2 />,
-    },
+      path: "/form/:pagina",
+      element: <Forms />,
+    }
   ]);
 
   return (

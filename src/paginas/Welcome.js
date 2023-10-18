@@ -15,7 +15,7 @@ const Welcome = () => {
 
             </Row>
             <div className="botaoclasse">
-                <Botao rota="/form1" />
+                <Botao rota="/form/1" />
             </div>
             <Disclaimer />
         </main>

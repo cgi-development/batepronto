@@ -1,4 +1,4 @@
-@import url(../../paginas/style.css);
+@import url("../../paginas/style.css");
 
 .botao-registro {
     background-color: var(--fundoazul);
@@ -11,6 +11,7 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    max-width: fit-content;
 }
 
 .botao-registro:hover {
