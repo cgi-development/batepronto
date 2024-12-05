@@ -1,0 +1,26 @@
+{
+    "name": "BatePronto",
+    "authors": [
+        {
+            "name": "Luiz Ferreira",
+            "url": "https://github.com/luizfernando1176"
+        },
+        {
+            "name": "Demócrito d'Anunciação",
+            "url": "https://github.com/democrito88"
+        },
+        {
+            "name": "Marco Barbosa",
+            "url": "https://github.com/kinhoob"
+        }
+    ],
+    "version": "1.0.0",
+    "homepage": "https://cgi-development.github.io/batepronto/",
+    "dependencies": {
+        "gh-pages": "^6.2.0"
+    },
+    "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
+    }
+}
