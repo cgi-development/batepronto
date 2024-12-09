@@ -1,4 +1,28 @@
 .form-etapas{
     display: flex;
+    gap: 4rem;
     justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.form-etapas::after{
+    content: "";
+    width: 380px;
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    top: 45px;
+}
+
+.etapa{
+    text-align: center;
+    background-color: white;
+    z-index: 1;
+    width: 120px;
+    padding: 0.5rem;
+}
+
+.etapa svg{
+    font-size: 1.8rem;
 }
