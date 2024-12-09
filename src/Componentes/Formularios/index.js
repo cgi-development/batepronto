@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Form, Button, Container, Card, Row, Col, Alert, Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import Botao from "../Botao";
 import LinhaAzul from "../LinhaAzul";
 import "./Formularios.css";
 
@@ -10,17 +9,20 @@ const Formulario1 = () => {
 
     const handleForm = (e) => {
         e.preventDefault();
+        
+        const checkbox = e.target.elements.aceite;
 
-        if (e.target[0].value === "on") {
+        if (checkbox.checked) {
             navegar('/form/2');
         } else {
             alert('Para prosseguir, esteja de acordo com os termos de uso.');
         }
-    }
+    };
+
 
     return (
-        <Container fluid>
-            <h1 className="text-center">Termos e Condições de Uso</h1>
+        <Container fluid className="card m-0 mt-4">
+            <h1 className="text-center mt-4">Termos e Condições de Uso</h1>
 
             As informações prestadas são de inteira responsabilidade do Declarante, que deverá ser maior de 18
             (dezoito anos) ou emancipado, podendo sofrer sanções penais/administrativas diante de informações
@@ -66,10 +68,11 @@ const Formulario1 = () => {
             detenção de 1 a 5 meses ou multa.
 
             <Form id="formulario1" onSubmit={handleForm}>
-                <Form.Group>
-                    <Form.Check className="mt-2" name="aceite" id="aceite" label="Aceito os termos e condições de uso" />
+                <Form.Group className="mt-2">
+                    <label>Aceito os termos e condições de uso</label>
+                    <Form.Check className="mt-2" name="aceite" id="aceite" />
                 </Form.Group>
-                <Button variant="primary" id="botaoForm1" type="submit">
+                <Button variant="primary" id="botaoForm1" type="submit" className="m-3">
                     <i className="bi bi-arrow-right"></i>
                     <span>Próximo</span>
                 </Button>
@@ -85,24 +88,32 @@ const Formulario2 = () => {
         s2: false,
         s3: false,
         s4: false,
-        s5: false
-    })
+        s5: false,
+    });
 
     const handleChange = (evento) => {
         const { name, checked } = evento.target;
         setCheckboxes({ ...checkboxes, [name]: checked });
-    }
+    };
 
     const handleForm = (e) => {
         e.preventDefault();
-        localStorage.setItem('checkboxes', checkboxes);
-        navegar('/form/3');
-    }
+
+        // Verifica se todos os checkboxes estão marcados
+        const todosMarcados = Object.values(checkboxes).every((valor) => valor === true);
+
+        if (todosMarcados) {
+            localStorage.setItem('checkboxes', JSON.stringify(checkboxes));
+            navegar('/form/3');
+        } else {
+            alert('Por favor, marque todos os checkboxes antes de continuar.');
+        }
+    };
 
     return (
         <div className="form-conteudo">
             <Form id="formulario2" onSubmit={handleForm}>
-                <h1 className="text-center">Validação</h1>
+                <h1 className="text-center mt-4">Validação</h1>
                 <Card>
                     <Card.Body>
                         <Form.Group>
@@ -131,7 +142,7 @@ const Formulario2 = () => {
                                 label="Alguém feriu-se, ainda que levemente, nesse sinistro?" />
 
                         </Form.Group>
-                        <Botao rota={"/form/2"} />
+                      
                         <Button variant="primary" className="mt-2" type="submit">
                             <i className="bi bi-arrow-right"></i>
                             <Form.Group>Próximo</Form.Group>
@@ -157,10 +168,10 @@ const Formulario3 = () => {
     const handleCep = (evento) => {
         setCep(evento.target.value);
 
-        if(cep.length > 7){
+        if (cep.length > 7) {
             fetch(`https://viacep.com.br/ws/${cep}/json/`)
-            .then(resposta => resposta.json())
-            .then(resposta => setEndereco(resposta))
+                .then(resposta => resposta.json())
+                .then(resposta => setEndereco(resposta))
         }
     }
 
@@ -176,7 +187,7 @@ const Formulario3 = () => {
                                 <Form.Group>
                                     <Form.Label htmlFor="cep">CEP</Form.Label>
                                     <Form.Control name="cep" type="text" id="cep" required=""
-                                        onInput={handleCep}/>
+                                        onInput={handleCep} />
                                 </Form.Group>
                             </Col>
                             <Col>
@@ -190,7 +201,7 @@ const Formulario3 = () => {
                             <Col>
                                 <Form.Group>
                                     <Form.Label htmlFor="bairro">Bairro</Form.Label>
-                                    <Form.Control id="bairro" name="bairro" required="" value={endereco.bairro}/>
+                                    <Form.Control id="bairro" name="bairro" required="" value={endereco.bairro} />
                                 </Form.Group>
                             </Col>
                             <Col>
