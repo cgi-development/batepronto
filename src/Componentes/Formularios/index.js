@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { Form, Button, Container, Card, Row, Col, Alert, Table } from "react-bootstrap";
+import { Form, Button, Container, Card, Row, Col, Alert, Table, Stack } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import LinhaAzul from "../LinhaAzul";
 import "./Formularios.css";
+import FormModalPessoa from "../FormModal/FormModalPessoa";
 
 const Formulario1 = () => {
     const navegar = useNavigate();
 
     const handleForm = (e) => {
         e.preventDefault();
-        
+
         const checkbox = e.target.elements.aceite;
 
         if (checkbox.checked) {
@@ -21,7 +22,7 @@ const Formulario1 = () => {
 
 
     return (
-        <Container fluid className="card m-0 mt-4">
+        <Container fluid className="m-0 mt-4">
             <h1 className="text-center mt-4">Termos e Condições de Uso</h1>
 
             As informações prestadas são de inteira responsabilidade do Declarante, que deverá ser maior de 18
@@ -69,8 +70,12 @@ const Formulario1 = () => {
 
             <Form id="formulario1" onSubmit={handleForm}>
                 <Form.Group className="mt-2">
-                    <label>Aceito os termos e condições de uso</label>
-                    <Form.Check className="mt-2" name="aceite" id="aceite" />
+                    <Form.Check
+                        className="mt-2"
+                        name="aceite"
+                        id="aceite"
+                        label="Aceito os termos e condições de uso"
+                    />
                 </Form.Group>
                 <Button variant="primary" id="botaoForm1" type="submit" className="m-3">
                     <i className="bi bi-arrow-right"></i>
@@ -116,37 +121,40 @@ const Formulario2 = () => {
                 <h1 className="text-center mt-4">Validação</h1>
                 <Card>
                     <Card.Body>
-                        <Form.Group>
-                            <Form.Check type="switch" name="s1" className="m-1" onChange={handleChange}
-                                label="Você é maior de 18 anos ou emancipado civilmente?" />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Check type="switch" name="s2" className="m-1" onChange={handleChange}
-                                label="O sinistro de trânsito ocorreu no interior de condomínios, postos de
+                        <Stack gap={3}>
+
+                            <Form.Group className="d-flex justfy-contents-center">
+                                <Form.Check type="switch" name="s1" className="m-1" onChange={handleChange}
+                                    label="Você é maior de 18 anos ou emancipado civilmente?" />
+                            </Form.Group>
+                            <Form.Group className="d-flex justfy-contents-center">
+                                <Form.Check type="switch" name="s2" className="m-1" onChange={handleChange}
+                                    label="O sinistro de trânsito ocorreu no interior de condomínios, postos de
                                 combustíveis,
                                 estacionamentos de mercados, lojas, shoppings ou outras áreas particulares?" />
 
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Check type="switch" name="s5" className="m-1" onChange={handleChange}
-                                label="O sinistro de trânsito ocorreu em rodovias estaduais ou federais?" />
+                            </Form.Group>
+                            <Form.Group className="d-flex justfy-contents-center">
+                                <Form.Check type="switch" name="s5" className="m-1" onChange={handleChange}
+                                    label="O sinistro de trânsito ocorreu em rodovias estaduais ou federais?" />
 
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Check type="switch" name="s3" className="m-1" onChange={handleChange}
-                                label="O sinistro de trânsito ocorreu na cidade do Olinda?" />
+                            </Form.Group>
+                            <Form.Group className="d-flex justfy-contents-center">
+                                <Form.Check type="switch" name="s3" className="m-1" onChange={handleChange}
+                                    label="O sinistro de trânsito ocorreu na cidade do Olinda?" />
 
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Check type="switch" name="s4" className="m-1" onChange={handleChange}
-                                label="Alguém feriu-se, ainda que levemente, nesse sinistro?" />
+                            </Form.Group>
+                            <Form.Group className="d-flex justfy-contents-center">
+                                <Form.Check type="switch" name="s4" className="m-1" onChange={handleChange}
+                                    label="Alguém feriu-se, ainda que levemente, nesse sinistro?" />
 
-                        </Form.Group>
-                      
-                        <Button variant="primary" className="mt-2" type="submit">
-                            <i className="bi bi-arrow-right"></i>
-                            <Form.Group>Próximo</Form.Group>
-                        </Button>
+                            </Form.Group>
+
+                            <Button variant="primary" className="mt-2" type="submit">
+                                <i className="bi bi-arrow-right"></i>
+                                <Form.Group>Próximo</Form.Group>
+                            </Button>
+                        </Stack>
                     </Card.Body>
                 </Card>
             </Form>
@@ -155,6 +163,14 @@ const Formulario2 = () => {
 }
 
 const Formulario3 = () => {
+    const [mostrarModalPessoa, setMostrarModalPessoa] = useState(false);
+    const [mostrarModalVeiculo, setMostrarModalVeiculo] = useState(false);
+    const [mostrarModalAnexo, setMostrarModalAnexo] = useState(false);
+
+    const handleModalPessoa = () => setMostrarModalPessoa(!mostrarModalPessoa)
+    const handleModalVeiculo = () => setMostrarModalVeiculo(!mostrarModalVeiculo)
+    const handleModalAnexo = () => setMostrarModalAnexo(!mostrarModalAnexo)
+
     const [cep, setCep] = useState("");
     const [endereco, setEndereco] = useState({
         cep: "",
@@ -177,247 +193,257 @@ const Formulario3 = () => {
 
     return (
         <Container fluid>
-            <Form className="form-conteudo">
-                <Form id="formSinistro" action="" method="post" enctype="multipart/form-data">
-                    <h1 className="text-center">LOCAL DO SINISTRO</h1>
+            <Form id="formSinistro" action="" method="post" encType="multipart/form-data">
+                <h1 className="text-center">LOCAL DO SINISTRO</h1>
 
-                    <Container fluid className="text-center">
-                        <Row>
-                            <Col>
-                                <Form.Group>
-                                    <Form.Label htmlFor="cep">CEP</Form.Label>
-                                    <Form.Control name="cep" type="text" id="cep" required=""
-                                        onInput={handleCep} />
-                                </Form.Group>
-                            </Col>
-                            <Col>
-                                <Form.Group>
-                                    <Form.Label htmlFor="logradouro">Logradouro</Form.Label>
-
-                                    <Form.Control name="logradouro" type="text" required=""
-                                        id="logradouro" value={endereco.logradouro} />
-                                </Form.Group>
-                            </Col>
-                            <Col>
-                                <Form.Group>
-                                    <Form.Label htmlFor="bairro">Bairro</Form.Label>
-                                    <Form.Control id="bairro" name="bairro" required="" value={endereco.bairro} />
-                                </Form.Group>
-                            </Col>
-                            <Col>
-                                <Form.Group>
-                                    <Form.Label htmlFor="complemento">Complemento</Form.Label>
-                                    <Form.Control name="complemento" type="text" id="complemento"
-                                        value="" />
-                                </Form.Group>
-                            </Col>
-                        </Row>
-                    </Container>
-                    <LinhaAzul className="linha mt-2 p-2 " />
+                <Container fluid className="text-center mb-3">
                     <Row>
-                        <Col md={4}>
-                            <Form.Label><b>Data do Sinistro*</b> </Form.Label>
-                            <Form.Control type="date" />
+                        <Col>
+                            <Form.Group>
+                                <Form.Label htmlFor="cep">CEP</Form.Label>
+                                <Form.Control name="cep" type="text" id="cep" required=""
+                                    onInput={handleCep} />
+                            </Form.Group>
                         </Col>
-                        <Col md={8}>
-                            <Form.Label><b>Ponto de referência</b></Form.Label>
-                            <Form.Control type="text" />
+                        <Col>
+                            <Form.Group>
+                                <Form.Label htmlFor="logradouro">Logradouro</Form.Label>
+
+                                <Form.Control name="logradouro" type="text" required=""
+                                    id="logradouro" value={endereco.logradouro} />
+                            </Form.Group>
+                        </Col>
+                        <Col>
+                            <Form.Group>
+                                <Form.Label htmlFor="bairro">Bairro</Form.Label>
+                                <Form.Control id="bairro" name="bairro" required="" value={endereco.bairro} />
+                            </Form.Group>
+                        </Col>
+                        <Col>
+                            <Form.Group>
+                                <Form.Label htmlFor="complemento">Complemento</Form.Label>
+                                <Form.Control name="complemento" type="text" id="complemento"
+                                    value="" />
+                            </Form.Group>
                         </Col>
                     </Row>
-                    <LinhaAzul className="linha mt-2 p-2 " />
-                    <Row>
-                        <h3>CIRCUNSTÂNCIAS DO SINISTRO</h3>
-                        <h6>Descreva a ocorrência</h6>
-                        <Col md={6}>
-                            <Form.Label><b>Sentido da Via*</b> </Form.Label>
-                            <Form.Select name="sentidosinistro" >
+                </Container>
+                <LinhaAzul className="linha mt-2 p-2 " />
+                <Row className="mb-3 ">
+                    <Col md={4}>
+                        <Form.Label><b>Data do Sinistro*</b> </Form.Label>
+                        <Form.Control type="date" />
+                    </Col>
+                    <Col md={8}>
+                        <Form.Label><b>Ponto de referência</b></Form.Label>
+                        <Form.Control type="text" />
+                    </Col>
+                </Row>
+                <LinhaAzul className="linha mt-2 p-2 " />
+                <Row>
+                    <h3>CIRCUNSTÂNCIAS DO SINISTRO</h3>
+                    <h6>Descreva a ocorrência</h6>
+                    <Col md={6}>
+                        <Form.Label><b>Sentido da Via*</b> </Form.Label>
+                        <Form.Select defaultValue={0} name="sentidosinistro" >
 
-                                <option selected>Selecione</option>
-                                <option>Cidade</option>
-                                <option>Outro</option>
-                                <option>Subúrbio</option>
+                            <option value={0}>Selecione</option>
+                            <option value={"Cidade"}>Cidade</option>
+                            <option value={"Outro"}>Outro</option>
+                            <option value={"Subúrbio"}>Subúrbio</option>
 
-                            </Form.Select>
-                            <br />
-                            <Form.Label><b>Sinalização da Via*</b> </Form.Label>
-                            <Form.Select name="sinalizacaosinistro" >
-                                <option selected>Selecione</option>
-                                <option>Estava em perfeito estado</option>
-                                <option>Estava ilegível</option>
-                                <option>Estava incompleta</option>
-                                <option>Não existe sinalização</option>
-                            </Form.Select>
-                            <br />
-                            <Form.Label><b>Condição da Via*</b> </Form.Label>
-                            <Form.Select name="condicaosinistro" >
-                                <option selected>Selecione</option>
-                                <option>Alagada</option>
-                                <option>Arenosa</option>
-                                <option>Molhada</option>
-                                <option>Oleosa</option>
-                                <option>Seca</option>
-                            </Form.Select>
-                            <br />
-                            <Form.Label><b>Natureza do Sinistro*</b> </Form.Label>
-                            <Form.Select name="naturezasinistro">
-                                <option selected>Selecione</option>
-                                <option>Atropelamento de animal</option>
-                                <option>Atropelamento de pedestre</option>
-                                <option>Capotamento</option>
-                                <option>Choque em obejto fixo</option>
-                                <option>Choque em veículo parado / estacionado</option>
-                                <option>Colisão envolvendo ciclista</option>
-                                <option>Colisão frontal</option>
-                                <option>Colisão lateral</option>
-                                <option>Colisão tranversal</option>
-                                <option>Colisão traseira</option>
-                                <option>Engavetamento</option>
-                                <option>Outro</option>
-                                <option>Tombamento</option>
-                            </Form.Select>
-                            <br />
-                        </Col>
-                        <Col md={6}>
-                            <Form.Label><b>Local da Via*</b> </Form.Label>
-                            <Form.Select name="localsinistro">
-                                <option selected>Selecione</option>
-                                <option>Ao logo da via</option>
-                                <option>Em um cruzamento</option>
-                                <option>Em um estacionamento</option>
-                                <option>Em uma esquina</option>
-                                <option>Em uma rotatória</option>
-                                <option>Sob um túnel</option>
-                                <option>Sobre um viaduto</option>
-                                <option>Sobre uma ponte</option>
-                            </Form.Select>
-                            <br />
-                            <Form.Label><b>Tempo/Clima*</b> </Form.Label>
-                            <Form.Select name="temposinistro">
-                                <option selected>Selecione</option>
-                                <option>Chovia na hora do acidente</option>
-                                <option>Esta bom</option>
-                                <option>Estava nublado</option>
-                            </Form.Select>
-                            <br />
-                            <Form.Label><b>Semáforo*</b> </Form.Label>
-                            <Form.Select name="semaforosinistro">
-                                <option selected>Selecione</option>
-                                <option>Estava com defeito</option>
-                                <option>Estava desligado</option>
-                                <option>Estava intermitente</option>
-                                <option>Estava sem defeito</option>
-                                <option>Não existia no local</option>
-                            </Form.Select>
-                            <br />
-                            <Form.Label><b>Conservação da Via*</b> </Form.Label>
-                            <Form.Select name="conservacaosinistro">
-                                <option selected>Selecione</option>
-                                <option>Em obras</option>
-                                <option>Mal Conservada</option>
-                                <option>Mal iluminada</option>
-                                <option>Perfeito estado</option>
-                            </Form.Select>
-                            <br />
-                        </Col>
-                    </Row>
-                    <LinhaAzul className="linha mt-2 p-2 " />
-                    <Row>
-                        <h3><i className="fa fa-person"></i> ENVOLVIDOS</h3>
-                        <h6>Condutores envolvidos na ocorrência.</h6>
-                        <Col md={2}>
-                            <button type="button" className="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModalEnv">
-                                Adicionar Pessoa
-                            </button>
-
-                        </Col>
+                        </Form.Select>
                         <br />
-                        <Col md={12}>
-                            <Table className=" mt-2">
-                                <thead>
-                                    <tr>
-                                        <th>Nome</th>
-                                        <th>CPF</th>
-                                        <th>Habilitação</th>
-                                        <th>Tipo</th>
-                                        <th>Ação</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="envolvidos">
-                                </tbody>
-                            </Table>
-                        </Col>
-                    </Row>
-                    <LinhaAzul className="linha mt-2 p-2 " />
-                    <Row>
-                        <h3><i className="fa fa-car"></i> VEÍCULOS ENVOLVIDOS</h3>
-                        <Col md={2}>
-                            <button type="button" className="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModalVe">
-                                Adicionar Veículo
-                            </button>
-                        </Col>
-                        <Col md={8}>
-                            <span>Cada veículo deve estar vinculado a uma pessoa. Mas, caso tenha-se evadido ou não
-                                tenha os dados do proprietário, você pode cadastrar separademente clicando em <b>
-                                    Adicionar Veículo.</b></span>
-
-                        </Col>
-                        <Col md={12}>
-                            <Table className=" mt-2">
-                                <thead>
-                                    <tr>
-                                        <th>Placa</th>
-                                        <th>Tipo</th>
-                                        <th>Característica</th>
-                                        <th>Ação</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="veiculos">
-                                </tbody>
-                            </Table>
-                        </Col>
-                    </Row>
-                    <LinhaAzul className="linha mt-2 p-2 " />
-                    <Row>
-                        <h3><i className="fa fa-file"></i> ANEXOS</h3>
-                        <Col md={2}>
-                            <button type="button" className="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModalAne">
-                                Adicionar Anexo
-                            </button>
-                        </Col>
-                        <Col md={8}>
-                            <span>
-                                É necessário anexar a<b> CNH</b> do condutor e o<b> CRLV </b>do veículo.
-                                <b>Só é permitido 4 imagens por veículo.</b>
-                            </span>
-                        </Col>
-                    </Row>
+                        <Form.Label><b>Sinalização da Via*</b> </Form.Label>
+                        <Form.Select defaultValue={0} name="sinalizacaosinistro" >
+                            <option value={0}>Selecione</option>
+                            <option value={"Estava em perfeito estado"}>Estava em perfeito estado</option>
+                            <option value={"Estava ilegível"}>Estava ilegível</option>
+                            <option value={"Estava incompleta"}>Estava incompleta</option>
+                            <option value={"Não existe sinalização"}>Não existe sinalização</option>
+                        </Form.Select>
+                        <br />
+                        <Form.Label><b>Condição da Via*</b> </Form.Label>
+                        <Form.Select defaultValue={0} name="condicaosinistro" >
+                            <option value={0}>Selecione</option>
+                            <option value={"Alagada"}>Alagada</option>
+                            <option value={"Arenosa"}>Arenosa</option>
+                            <option value={"Molhada"}>Molhada</option>
+                            <option value={"Oleosa"}>Oleosa</option>
+                            <option value={"Seca"}>Seca</option>
+                        </Form.Select>
+                        <br />
+                        <Form.Label><b>Natureza do Sinistro*</b> </Form.Label>
+                        <Form.Select defaultValue={0} name="naturezasinistro">
+                            <option value={0}>Selecione</option>
+                            <option value={"Atropelamento de animal"}>Atropelamento de animal</option>
+                            <option value={"Atropelamento de pedestre"}>Atropelamento de pedestre</option>
+                            <option value={"Capotamento"}>Capotamento</option>
+                            <option value={"Choque em obejto fixo"}>Choque em obejto fixo</option>
+                            <option value={"Choque em veículo parado / estacionado"}>Choque em veículo parado / estacionado</option>
+                            <option value={"Colisão envolvendo ciclista"}>Colisão envolvendo ciclista</option>
+                            <option value={"Colisão frontal"}>Colisão frontal</option>
+                            <option value={"Colisão lateral"}>Colisão lateral</option>
+                            <option value={"Colisão tranversal"}>Colisão tranversal</option>
+                            <option value={"Colisão traseira"}>Colisão traseira</option>
+                            <option value={"Engavetamento"}>Engavetamento</option>
+                            <option value={"Outro"}>Outro</option>
+                            <option value={"Tombamento"}>Tombamento</option>
+                        </Form.Select>
+                        <br />
+                    </Col>
+                    <Col md={6}>
+                        <Form.Label><b>Local da Via*</b> </Form.Label>
+                        <Form.Select defaultValue={0} name="localsinistro">
+                            <option value={0}>Selecione</option>
+                            <option value={""}>Ao logo da via</option>
+                            <option value={""}>Em um cruzamento</option>
+                            <option value={""}>Em um estacionamento</option>
+                            <option value={""}>Em uma esquina</option>
+                            <option value={""}>Em uma rotatória</option>
+                            <option value={""}>Sob um túnel</option>
+                            <option value={""}>Sobre um viaduto</option>
+                            <option value={""}>Sobre uma ponte</option>
+                        </Form.Select>
+                        <br />
+                        <Form.Label><b>Tempo/Clima*</b> </Form.Label>
+                        <Form.Select defaultValue={0} name="temposinistro">
+                            <option value={0}>Selecione</option>
+                            <option value={""}>Chovia na hora do acidente</option>
+                            <option value={""}>Esta bom</option>
+                            <option value={""}>Estava nublado</option>
+                        </Form.Select>
+                        <br />
+                        <Form.Label><b>Semáforo*</b> </Form.Label>
+                        <Form.Select defaultValue={0} name="semaforosinistro">
+                            <option value={0}>Selecione</option>
+                            <option value={""}>Estava com defeito</option>
+                            <option value={""}>Estava desligado</option>
+                            <option value={""}>Estava intermitente</option>
+                            <option value={""}>Estava sem defeito</option>
+                            <option value={""}>Não existia no local</option>
+                        </Form.Select>
+                        <br />
+                        <Form.Label><b>Conservação da Via*</b> </Form.Label>
+                        <Form.Select defaultValue={0} name="conservacaosinistro">
+                            <option value={0}>Selecione</option>
+                            <option value={""}>Em obras</option>
+                            <option value={""}>Mal Conservada</option>
+                            <option value={""}>Mal iluminada</option>
+                            <option value={""}>Perfeito estado</option>
+                        </Form.Select>
+                        <br />
+                    </Col>
+                </Row>
+                <LinhaAzul className="linha mt-2 p-2 " />
+                <Row>
+                    <h3><i className="fa fa-person"></i> ENVOLVIDOS</h3>
+                    <h6>Condutores envolvidos na ocorrência.</h6>
+                    <Col md={2}>
+                        <button type="button"
+                            className="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModalEnv"
+                            onClick={() => handleModalPessoa}
+                        >
+                            Adicionar Pessoa
+                        </button>
+                    </Col>
+                    <br />
                     <Col md={12}>
                         <Table className=" mt-2">
                             <thead>
                                 <tr>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Habilitação</th>
                                     <th>Tipo</th>
-                                    <th>Anexo</th>
                                     <th>Ação</th>
                                 </tr>
                             </thead>
-                            <tbody id="anexos">
+                            <tbody id="envolvidos">
                             </tbody>
                         </Table>
                     </Col>
-                    <br />
-                    <button className="btn btn-success mt-2 " onclick="location.href = 'formulario-2.html'">
-                        <i className="bi bi-arrow-left"></i>
-                        <span>Anterior</span>
-                    </button>
-                    <button className="btn btn-primary mt-2 " type="submit">
-                        <i className="bi bi-arrow-right"></i>
-                        <span>Próximo</span>
-                    </button>
-                </Form>
+                </Row>
+                <LinhaAzul className="linha mt-2 p-2 " />
+                <Row>
+                    <h3><i className="fa fa-car"></i> VEÍCULOS ENVOLVIDOS</h3>
+                    <Col md={2}>
+                        <button type="button"
+                            className="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModalVe"
+                            onClick={handleModalVeiculo}
+                        >
+                            Adicionar Veículo
+                        </button>
+                    </Col>
+                    <Col md={8}>
+                        <span>Cada veículo deve estar vinculado a uma pessoa. Mas, caso tenha-se evadido ou não
+                            tenha os dados do proprietário, você pode cadastrar separademente clicando em <b>
+                                Adicionar Veículo.</b></span>
+
+                    </Col>
+                    <Col md={12}>
+                        <Table className=" mt-2">
+                            <thead>
+                                <tr>
+                                    <th>Placa</th>
+                                    <th>Tipo</th>
+                                    <th>Característica</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody id="veiculos">
+                            </tbody>
+                        </Table>
+                    </Col>
+                </Row>
+                <LinhaAzul className="linha mt-2 p-2 " />
+                <Row>
+                    <h3><i className="fa fa-file"></i> ANEXOS</h3>
+                    <Col md={2}>
+                        <button type="button"
+                            className="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModalAne"
+                            onClick={handleModalAnexo}
+                        >
+                            Adicionar Anexo
+                        </button>
+                    </Col>
+                    <Col md={8}>
+                        <span>
+                            É necessário anexar a<b> CNH</b> do condutor e o<b> CRLV </b>do veículo.
+                            <b>Só é permitido 4 imagens por veículo.</b>
+                        </span>
+                    </Col>
+                </Row>
+                <Col md={12}>
+                    <Table className=" mt-2">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Anexo</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="anexos">
+                        </tbody>
+                    </Table>
+                </Col>
+                <br />
+                <button className="btn btn-success mt-2 " onClick={() => window.location.href = 'formulario-2.html'}>
+                    <i className="bi bi-arrow-left"></i>
+                    <span>Anterior</span>
+                </button>
+                <button className="btn btn-primary mt-2 " type="submit">
+                    <i className="bi bi-arrow-right"></i>
+                    <span>Próximo</span>
+                </button>
             </Form>
+            <FormModalPessoa show={mostrarModalPessoa} handleClose={handleModalPessoa} />
         </Container>
     )
 }
@@ -425,42 +451,40 @@ const Formulario3 = () => {
 const Formulario4 = () => {
 
     return (
-        <Form className="form-conteudo">
-            <Form action="" method="post" enctype="multipart/form-data">
-                <Alert className="alert alert-success text-center" role="alert">
-                    <h4 className="alert-heading">Concluído!</h4>
-                    <p>Obrigado Senhor(a) <span className="nome"></span>. Seu cadastro foi realizado com sucesso.</p>
-                    <hr />
-                    <p className="mb-0">
-                        <Row>
-                            <Col md={6}>
-                                <Form.Label className="mt-2"><b>Protocolo:</b> </Form.Label>
-                                <span className="protocolo"></span>
-                                <br />
-                                <Form.Label className="mt-2"> <b>Nome do Condutor:</b></Form.Label>
-                                <span className="condutor"></span>
-                            </Col>
-                            <Col md={6}>
-                                <Form.Label className="mt-2"> <b>Local:</b></Form.Label>
-                                <span className="local"></span><br />
-                                <Form.Label className="mt-2"> <b>Tipo de Sinistro:</b></Form.Label>
-                                <span className="tipo"></span>
-                            </Col>
-                        </Row>
-                    </p>
-                </Alert>
-                <br />
-                <Button className="mt-2 " variant="success" onclick="location.href = './formulario-3.html'">
-                    <i className="bi bi-arrow-left"></i>
-                    <span>Anterior</span>
-                </Button>
-                <Button className="mt-2 " variant="primary" onclick="location.href = './formulario-1.html'">
-                    <i className="bi bi-arrow-right"></i>
-                    <span>Concluir</span>
-                </Button>
+        <Form action="" method="post" encType="multipart/form-data">
+            <Alert className="alert alert-success text-center" role="alert">
+                <h4 className="alert-heading">Concluído!</h4>
+                <p>Obrigado Senhor(a) <span className="nome"></span>. Seu cadastro foi realizado com sucesso.</p>
+                <hr />
+                <p className="mb-0">
+                    <Row>
+                        <Col md={6}>
+                            <Form.Label className="mt-2"><b>Protocolo:</b> </Form.Label>
+                            <span className="protocolo"></span>
+                            <br />
+                            <Form.Label className="mt-2"> <b>Nome do Condutor:</b></Form.Label>
+                            <span className="condutor"></span>
+                        </Col>
+                        <Col md={6}>
+                            <Form.Label className="mt-2"> <b>Local:</b></Form.Label>
+                            <span className="local"></span><br />
+                            <Form.Label className="mt-2"> <b>Tipo de Sinistro:</b></Form.Label>
+                            <span className="tipo"></span>
+                        </Col>
+                    </Row>
+                </p>
+            </Alert>
+            <br />
+            <Button className="mt-2 " variant="success" onClick={() => window.location.href = './formulario-3.html'}>
+                <i className="bi bi-arrow-left"></i>
+                <span>Anterior</span>
+            </Button>
+            <Button className="mt-2 " variant="primary" onClick={ () => window.location.href = './formulario-1.html'}>
+                <i className="bi bi-arrow-right"></i>
+                <span>Concluir</span>
+            </Button>
 
 
-            </Form>
         </Form>
     )
 }

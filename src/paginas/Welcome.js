@@ -2,23 +2,25 @@ import "./style.css";
 import Disclaimer from "../Componentes/Disclaimer";
 import Banner from "../Componentes/Banner";
 import Botao from "../Componentes/Botao";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Stack } from "react-bootstrap";
 
 const Welcome = () => {
     return (
-        <main className="container">
-
-            <Row>
-                <Col>
-                    <Banner />
-                </Col>
-
+            <Row className="p-5" >
+                <Stack>
+                    <Col>
+                        <Banner />
+                    </Col>
+                    <Col>
+                        <div className="botaoclasse">
+                            <Botao rota="/form/1" />
+                        </div>
+                    </Col>
+                    <Col>
+                        <Disclaimer />
+                    </Col>
+                </Stack>
             </Row>
-            <div className="botaoclasse">
-                <Botao rota="/form/1" />
-            </div>
-            <Disclaimer />
-        </main>
     )
 }
 

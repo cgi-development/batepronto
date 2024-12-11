@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { Formulario1, Formulario2, Formulario3, Formulario4 } from "../Componentes/Formularios";
 import ErrorPage from "./ErrorPage.js";
 import IndicePagina from "../Componentes/IndicePagina"
+import { Container } from "react-bootstrap";
 
 const Forms = () => {
     let { pagina } = useParams();
@@ -10,7 +11,9 @@ const Forms = () => {
     return (
         <>
         <IndicePagina indice={pagina}/>
-        <FormularioAtual />
+        <Container>
+            <FormularioAtual />
+        </Container>
         </>
     )
 }
